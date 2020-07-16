@@ -25,7 +25,7 @@ class FirstLastNames extends Component {
                                         <InputGroup.Text>First name(s)</InputGroup.Text>
                                     </InputGroup.Prepend>
                                     <Form.Control
-                                    placeholder='Ex: Jack'
+                                    placeholder='Ex: John'
                                     />
                                 </InputGroup>
                             </Col>
