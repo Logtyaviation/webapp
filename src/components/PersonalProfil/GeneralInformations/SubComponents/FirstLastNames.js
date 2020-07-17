@@ -11,22 +11,42 @@ class FirstLastNames extends Component {
                         <Row>
                             <Col>
                                 <InputGroup>
-                                    <InputGroup.Prepend>
-                                        <InputGroup.Text>Last name(s)</InputGroup.Text>
-                                    </InputGroup.Prepend>
-                                    <Form.Control
-                                    placeholder='Ex: Travolta'
-                                    />
+                                    <Form.Group>
+                                        <InputGroup.Prepend>
+                                            <InputGroup.Text>Last name(s)</InputGroup.Text>
+                                        </InputGroup.Prepend>
+                                    </Form.Group>
+                                    <Form.Group>
+                                        <Form.Control
+                                        placeholder='Ex: Travolta'
+                                        />
+                                    </Form.Group>
+                                    <Form.Group>
+                                        <Form.Control
+                                        placeholder='Other last name(s)*'
+                                        />
+                                        <Form.Text className='text-muted'>*Optional</Form.Text>
+                                    </Form.Group>
                                 </InputGroup>
                             </Col>
                             <Col>
                                 <InputGroup>
-                                    <InputGroup.Prepend>
-                                        <InputGroup.Text>First name(s)</InputGroup.Text>
-                                    </InputGroup.Prepend>
-                                    <Form.Control
-                                    placeholder='Ex: John'
-                                    />
+                                    <Form.Group>
+                                        <InputGroup.Prepend>
+                                            <InputGroup.Text>First name(s)</InputGroup.Text>
+                                        </InputGroup.Prepend>
+                                    </Form.Group>
+                                    <Form.Group>
+                                        <Form.Control
+                                        placeholder='Ex: John'
+                                        />
+                                    </Form.Group>
+                                    <Form.Group>
+                                        <Form.Control
+                                        placeholder='Other first name(s)*'
+                                        />
+                                        <Form.Text className='text-muted'>*Optional</Form.Text>
+                                    </Form.Group>
                                 </InputGroup>
                             </Col>
                         </Row>
