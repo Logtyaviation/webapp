@@ -15,6 +15,7 @@ class LicenseTypeValidityRemarks extends Component {
                                         <InputGroup.Text>Title</InputGroup.Text>
                                     </InputGroup.Prepend>
                                     <Form.Control
+                                    name='LicenseTitle'
                                     placeholder='Ex: CPL(A)'
                                     />
                                 </InputGroup>
@@ -25,6 +26,7 @@ class LicenseTypeValidityRemarks extends Component {
                                         <InputGroup.Text>Date of init. issue</InputGroup.Text>
                                     </InputGroup.Prepend>
                                     <Form.Control
+                                    name='DateOfTitleInitialIssue'
                                     placeholder='Ex: 12/03/1999'
                                     />
                                 </InputGroup>
@@ -35,6 +37,7 @@ class LicenseTypeValidityRemarks extends Component {
                                         <InputGroup.Text>Country code</InputGroup.Text>
                                     </InputGroup.Prepend>
                                     <Form.Control
+                                    name='LicenseCountryCode'
                                     placeholder='IE'
                                     />
                                 </InputGroup>
@@ -47,6 +50,7 @@ class LicenseTypeValidityRemarks extends Component {
                                         <InputGroup.Text>ELP</InputGroup.Text>
                                     </InputGroup.Prepend>
                                     <Form.Control
+                                    name='LicenseELP'
                                     placeholder='Ex: 6'
                                     />
                                     <InputGroup.Prepend>
@@ -63,6 +67,7 @@ class LicenseTypeValidityRemarks extends Component {
                                         <InputGroup.Text>Remarks</InputGroup.Text>
                                     </InputGroup.Prepend>
                                     <Form.Control 
+                                    name='LicenseRemarks'
                                     as='textarea'
                                     placeholder='Ex: - ATPL(A) theoritical knowledge credit
                                     - Endorsement for Instrument Rating'

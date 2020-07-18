@@ -14,7 +14,8 @@ class LicenseStateNumberDate extends Component {
                                     <InputGroup.Prepend>
                                         <InputGroup.Text>State of issue</InputGroup.Text>
                                     </InputGroup.Prepend>
-                                    <Form.Control 
+                                    <Form.Control
+                                    name='LicenseStateOfIssue' 
                                     placeholder='Ex: Ireland'
                                     />                       
                                 </InputGroup>
@@ -25,6 +26,7 @@ class LicenseStateNumberDate extends Component {
                                         <InputGroup.Text>Number</InputGroup.Text>
                                     </InputGroup.Prepend>
                                     <Form.Control 
+                                    name='LicenseNumber'
                                     placeholder='Ex: IE.FCL.123456'
                                     />                       
                                 </InputGroup>
@@ -35,6 +37,7 @@ class LicenseStateNumberDate extends Component {
                                         <InputGroup.Text>Date of issue</InputGroup.Text>
                                     </InputGroup.Prepend>
                                     <Form.Control 
+                                    name='LicenseDateOfIssue'
                                     placeholder='Ex: 06/11/1998'
                                     />                       
                                 </InputGroup>
@@ -45,6 +48,7 @@ class LicenseStateNumberDate extends Component {
                                         <InputGroup.Text>Expiration</InputGroup.Text>
                                     </InputGroup.Prepend>
                                     <Form.Control 
+                                    name='LicenseExpirationDate'
                                     placeholder='Ex: 06/11/2025'
                                     />                       
                                 </InputGroup>

@@ -15,6 +15,7 @@ class AccountDetails extends Component {
                                         <InputGroup.Text>Email</InputGroup.Text>
                                     </InputGroup.Prepend>
                                     <Form.Control
+                                    name='LogbookHolderEmail'
                                     placeholder='Ex: john.travolta@hotmail.com'
                                     />
                                 </InputGroup>
@@ -25,12 +26,14 @@ class AccountDetails extends Component {
                                         <InputGroup.Text>Password</InputGroup.Text>
                                     </InputGroup.Prepend>
                                     <Form.Control
+                                    name='AccountPassword'
                                     placeholder='Choose a password'
                                     />
                                 </InputGroup>
                             </Col>
                             <Col>
                                 <Form.Control
+                                name='ConfirmPassword'
                                 placeholder='Confirm password'
                                 />
                             </Col>

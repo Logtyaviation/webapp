@@ -18,11 +18,13 @@ class FirstLastNames extends Component {
                                     </Form.Group>
                                     <Form.Group>
                                         <Form.Control
+                                        name='LogbookHolderLastName'
                                         placeholder='Ex: Travolta'
                                         />
                                     </Form.Group>
                                     <Form.Group>
                                         <Form.Control
+                                        name='CTDLogbookHolderLastName'
                                         placeholder='Other last name(s)*'
                                         />
                                         <Form.Text className='text-muted'>*Optional</Form.Text>
@@ -38,11 +40,13 @@ class FirstLastNames extends Component {
                                     </Form.Group>
                                     <Form.Group>
                                         <Form.Control
+                                        name='LogbookHolderFirstName'
                                         placeholder='Ex: John'
                                         />
                                     </Form.Group>
                                     <Form.Group>
                                         <Form.Control
+                                        name='CTDLogbookHolderFirstName'
                                         placeholder='Other first name(s)*'
                                         />
                                         <Form.Text className='text-muted'>*Optional</Form.Text>
