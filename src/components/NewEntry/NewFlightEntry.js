@@ -22,22 +22,22 @@ class NewFlightEntry extends Component {
                 </Row>
                 <Row>
                     <Col>
+                        <NewTimeEntry/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <NewAircraftEntry/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
                         <NewCrewEntry/>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                    <NewAircraftEntry/>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                    <NewTimeEntry/>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                    <NewRemarkEntry/>
+                        <NewRemarkEntry/>
                     </Col>
                 </Row>
                 <Row>
