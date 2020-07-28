@@ -26,6 +26,7 @@ class AccountDetails extends Component {
                                         <InputGroup.Text>Password</InputGroup.Text>
                                     </InputGroup.Prepend>
                                     <Form.Control
+                                    type='password'
                                     name='AccountPassword'
                                     placeholder='Choose a password'
                                     />
@@ -33,6 +34,7 @@ class AccountDetails extends Component {
                             </Col>
                             <Col>
                                 <Form.Control
+                                type='password'
                                 name='ConfirmPassword'
                                 placeholder='Confirm password'
                                 />
