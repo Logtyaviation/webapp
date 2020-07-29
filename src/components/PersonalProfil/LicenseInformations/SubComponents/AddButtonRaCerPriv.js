@@ -30,24 +30,23 @@ class AddButtonRaCerPriv extends Component {
     returnAddRaCerPriv(){
         /* map est une fonction disponible sur un array dans javascript.
          * Elle permet d'attribuer une valeur à chaque element dans cet array.
+         * 
          * Exemple: 
          * const array = [a, b, c]
-         * const mappedArray = array.map(element => {
+         * const mappedArray = array.map(function callback(element) {
          *  return <Component prop={element}/>
          * })
-         * mappedArray sera egal à [<Component prop={a}/>, <Component prop={b}/>, <Component prop={c}/>]
+         * mappedArray sera egal à:
+         * [<Component prop={a}/>, <Component prop={b}/>, <Component prop={c}/>]
+         * 
+         * On peut également abreger un callback de cette façon:
+         * const mappedArray = array.map(element => <Component prop={element}/>)
          * 
          * Pour plus d'infos: 
          * https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/map
          * 
-         * La façon de noter array.map(element => element*2) par exemple est une abreviation pour:
-         * array.map(function callback(element) {
-         *  return element*2
-         * })
          */
-        return this.state.selectedKeys.map((selectedKey) => {
-            return <NewLineRaCerPriv theKey={selectedKey}/>
-        })
+        return this.state.selectedKeys.map((selectedKey) => <NewLineRaCerPriv theKey={selectedKey}/>);
     }
 
     render(){
