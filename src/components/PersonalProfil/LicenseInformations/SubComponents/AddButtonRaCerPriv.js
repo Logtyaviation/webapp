@@ -16,7 +16,7 @@ class AddButtonRaCerPriv extends Component {
         // cet eventKey dans l'array selectedKeys. Sauf qu'on peut pas directement ajouter
         // un element à un array dans le state de react, du coup on le recupere dans 
         // une constante locale, on y ajoute le nouvel eventKey, puis on écrase l'ancien array
-        //it dans le state avec la constante locale
+        // dans le state avec la constante locale
         const newSelectedKeys = this.state.selectedKeys
         newSelectedKeys.push(eventKey)
         this.setState({
