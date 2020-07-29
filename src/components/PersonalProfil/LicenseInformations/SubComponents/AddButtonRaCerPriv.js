@@ -14,8 +14,8 @@ class AddButtonRaCerPriv extends Component {
     handleChange(eventKey){
         // chaque fois que le button add + eventKey correspondant sera cliqué on va ajouter
         // cet eventKey dans l'array selectedKeys. Sauf qu'on peut pas directement ajouter
-        // un element à un array dans le state de react, du coup je le recupere dans 
-        // une constante locale, on y ajoute le nouvel eventKey, puis j'écrase l'ancien array
+        // un element à un array dans le state de react, du coup on le recupere dans 
+        // une constante locale, on y ajoute le nouvel eventKey, puis on écrase l'ancien array
         //it dans le state avec la constante locale
         const newSelectedKeys = this.state.selectedKeys
         newSelectedKeys.push(eventKey)
