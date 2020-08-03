@@ -1,32 +1,35 @@
 import React, { Component } from 'react';
-import { Row, Col, DropdownButton, Dropdown, Container } from 'react-bootstrap';
+import { Row, Col, DropdownButton, Dropdown, Container, Button } from 'react-bootstrap';
 import NewLineRaCerPriv from './NewLineRaCerPriv';
 
 class AddButtonRaCerPriv extends Component {
     constructor(props){
         super(props)
         this.state={
-            selectedKeys: [] // ici j'utilise directement un array
+            selectedKeys:[],
         }
         this.handleChange=this.handleChange.bind(this)
+        this.handleDelete=this.handleDelete.bind(this)
     }
 
     handleChange(eventKey){
-        // chaque fois que le button add + eventKey correspondant sera cliqué on va ajouter
-        // cet eventKey dans l'array selectedKeys. Sauf qu'on peut pas directement ajouter
-        // un element à un array dans le state de react, du coup on le recupere dans 
-        // une constante locale, on y ajoute le nouvel eventKey, puis on écrase l'ancien array
-        // dans le state avec la constante locale
         const newSelectedKeys = this.state.selectedKeys
         newSelectedKeys.push(eventKey)
         this.setState({
-            selectedKeys: newSelectedKeys
+            selectedKeys:newSelectedKeys,
         }
         ,function callBack(){
             console.log(this.state)
         })
     }
 
+    handleDelete(index){
+        const actualSelectedKeys = this.state.selectedKeys
+        actualSelectedKeys.splice(index, 1)
+        this.setState({
+            selectedKeys:actualSelectedKeys
+        })
+    }
     returnAddRaCerPriv(){
         /* map est une fonction disponible sur un array dans javascript.
          * Elle permet d'attribuer une valeur à chaque element dans cet array.
@@ -46,7 +49,21 @@ class AddButtonRaCerPriv extends Component {
          * https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/map
          * 
          */
-        return this.state.selectedKeys.map((selectedKey) => <NewLineRaCerPriv theKey={selectedKey}/>);
+        return(
+            this.state.selectedKeys.map((selectedKey, index) => 
+                <Row>
+                    <Col md='11'>
+                        <NewLineRaCerPriv theKey={selectedKey}/>
+                    </Col>
+                    <Col md='1'>
+                        <Button
+                        variant='danger'
+                        onClick={this.handleDelete}
+                        >Delete</Button>                    
+                    </Col>
+                </Row>
+            )
+        );
     }
 
     render(){

@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import { Row, Col, Form, InputGroup, Button } from 'react-bootstrap';
+import { Row, Col, Form, InputGroup } from 'react-bootstrap';
 
 class NewLineRaCerPriv extends Component {
     constructor(props){
         super(props)
         this.state={
             theKey:props.theKey,
+            index:props.index,
         }
+    }
+
+    callback(){
+        console.log(this.state)
     }
 
     fillInForm(){
@@ -25,12 +30,8 @@ class NewLineRaCerPriv extends Component {
                 this.genericForm('Privilege', 'Ex: PBN', 'LicensePrivilegeName')
             )
         }
-        else
-            return(
-                <div>No rating, certificate or privilege has been added.</div>
-            )
+        else return(null)
     }
-
 
     genericForm(igt, ph, nm){
         return(
@@ -58,9 +59,6 @@ class NewLineRaCerPriv extends Component {
                             placeholder='Ex: TDB'
                             />
                         </InputGroup>
-                    </Col>
-                    <Col md='1'>
-                        <Button variant='danger'>Delete</Button>
                     </Col>
                 </Row>
             </Form>
