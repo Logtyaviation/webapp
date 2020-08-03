@@ -58,7 +58,24 @@ class AddButtonRaCerPriv extends Component {
                     <Col md='1'>
                         <Button
                         variant='danger'
-                        onClick={this.handleDelete}
+                        /**
+                         * avant en dessous y avait ecrit:
+                         * 
+                         * onClick={this.handleDelete}
+                         * 
+                         * du coup tu donne au gestionnaire d'evenement juste le nom de la fonction
+                         * que tu aimerais qui soit executé. Sauf que nous on aimerai que cette fonction
+                         * soit executé avec un index spécifique. Et mettre:
+                         * 
+                         * onClick={this.handleDelete(index)}
+                         * 
+                         * ne fonctionnera pas car la fonction sera directement executé (et qu'une seule fois)
+                         * du coup on donne au gestionnaire d'evenements une fonction anonyme (aussi appelé
+                         * lambda expression) "() => ..." qui elle executera this.handleDelete avec l'index souhaité:
+                         * 
+                         * onClick={() => this.handleDelete(index)}
+                         */
+                        onClick={() => this.handleDelete(index)}
                         >Delete</Button>                    
                     </Col>
                 </Row>
