@@ -1,58 +1,65 @@
 import React, { Component } from 'react';
-import { Col, Row, Button} from 'react-bootstrap'
+import { Col, Row, DropdownButton, Dropdown, Button} from 'react-bootstrap'
 import OwnersLine from './OwnersLine';
 import CrewLine from './CrewLine';
+import CrewRankDropdown from './CrewRankDropdown';
+
 
 class AddCrewButton extends Component {
 
     constructor(props){
         super(props)
         this.state={
-            counter:props.counter,
             LogbookHolderRank:'First Officer',
             LogbookHolderFirstName:'Xavier',
-            LogbookHolderLastName:'Solse'
+            LogbookHolderLastName:'Solse',
+            crewMembers:[]
         }
-        this.addNewCrew=this.addNewCrew.bind(this)
+        this.handleChange=this.handleChange.bind(this)
+        this.handleDelete=this.handleDelete.bind(this)
     }
 
-    addNewCrew(){
+    handleChange(eventKey){
+        const addNewCrewMember=this.state.crewMembers
+        addNewCrewMember.push(eventKey)
         this.setState({
-            counter:this.state.counter+1})
+            crewMembers:addNewCrewMember
+        },
+        function callBack(){
+            console.log(this.state)
+        })
     }
 
-    returnAddCrew(){
-        const array=[]
+    handleDelete(index){
+        const deleteCrewMember=this.state.crewMembers
+        deleteCrewMember.splice(index, 1)
+        this.setState({
+            crewMembers:deleteCrewMember
+        },
+        function callBack(){
+            console.log(this.state)
+        })
+    }
 
-        for(let i=0 ; i<this.state.counter ; i++){
-            let element;
-            if (i===0){
-                element=(
-                    <>
-                    <Row>
-                        <OwnersLine 
-                        LogbookHolderFirstName={this.state.LogbookHolderFirstName} 
-                        LogbookHolderLastName={this.state.LogbookHolderLastName}
-                        LogbookHolderRank={this.state.LogbookHolderRank}
-                        />
-                    </Row>
-                    </>
-                )
-            }
-            else(
-                element=(
-                    <Row>
-                        <CrewLine/>
-                    </Row>
-                )
+    returnCrewMembers(){
+        return(
+            this.state.crewMembers.map((selectedKey, index)=>
+            <>
+                <Col md={2}>
+                    <CrewRankDropdown selectedKey={selectedKey}/>
+                </Col>
+                <Col md={8}>
+                    <CrewLine/>
+                </Col>
+                <Col md={2}>
+                    <Button 
+                    variant='danger'
+                    onClick={()=> this.handleDelete(index)}
+                    >Delete</Button> 
+                </Col>
+            </>
             )
-            array.push(
-                element
-            )            
-        }
-
-        return array
-
+        )
     }
 
     render() {
@@ -60,11 +67,27 @@ class AddCrewButton extends Component {
             <>
             <Row>
                 <Col md={2}>
-                    <Button
-                    onClick={this.addNewCrew}>Add Crew</Button>
+                        <DropdownButton
+                            drop='right'
+                            title='Add crew member'
+                            onSelect={this.handleChange}
+                            >
+                            <Dropdown.Item eventKey='Captain'>Captain</Dropdown.Item>
+                            <Dropdown.Item eventKey='First Officer'>First Officer</Dropdown.Item>
+                            <Dropdown.Item eventKey='Custom'>Custom</Dropdown.Item>
+                        </DropdownButton>
                 </Col>
                 <Col md={10}>
-                {this.returnAddCrew()}
+                    <Row>
+                        <OwnersLine 
+                        LogbookHolderFirstName={this.state.LogbookHolderFirstName} 
+                        LogbookHolderLastName={this.state.LogbookHolderLastName}
+                        LogbookHolderRank={this.state.LogbookHolderRank}
+                        />
+                    </Row>
+                    <Row>
+                        {this.returnCrewMembers()}
+                    </Row>
                 </Col>
             </Row>
             </>

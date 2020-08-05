@@ -6,19 +6,22 @@ class Header extends Component {
         return (
             <>
             <Row>
-                <Col md={2}></Col>
+                <Col md={2}/>
                 <Col md={10}>
                     <Row>
-                    <Col md={3}>
-                        Rank
-                    </Col>
-                    <Col md={5}>
-                        Name
-                    </Col>
-                    <Col md={2}>
-                        Pilot in command
-                    </Col>
-                    <Col></Col>
+                        <Col md={2}>
+                            Rank
+                        </Col>
+                        <Col md={8}>
+                            <Row>
+                                <Col md={9}>
+                                    Name
+                                </Col>
+                                <Col md={3}>
+                                    Pilot in command
+                                </Col>
+                            </Row>
+                        </Col>
                     </Row>
                 </Col>
             </Row>

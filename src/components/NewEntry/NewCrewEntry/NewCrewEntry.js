@@ -8,9 +8,9 @@ class NewCrewEntry extends Component {
     render() {
         return (
             <Container fluid>
-            Crewing informations
-            <Header/>
-            <AddCrewButton counter={1}/>
+                Crewing informations
+                <Header/>
+                <AddCrewButton counter={1}/>
             </Container>
         );
     }
