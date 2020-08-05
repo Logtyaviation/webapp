@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CrewRankDropdown from './CrewRankDropdown';
 import {Col, FormCheck, FormControl, Row, InputGroup} from 'react-bootstrap'
 
 class NewCrewLine extends Component {

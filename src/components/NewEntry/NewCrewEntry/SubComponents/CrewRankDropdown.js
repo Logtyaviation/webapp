@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
-import { Row, Col, Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 
 class CrewRankDropdown extends Component {
 
-    constructor(props){
-        super(props)
-        this.state=({
-            selectedKey:props.selectedKey
-        })
-    }
-
     returnSelected(){
-        if(this.state.selectedKey === 'Custom'){
+        if(this.props.selectedKey === 'Custom'){
             return(
                 <Form>
                     <Form.Control 
@@ -22,7 +15,7 @@ class CrewRankDropdown extends Component {
         }
         else{
             return(
-                this.state.selectedKey
+                this.props.selectedKey
             )
         }
     }

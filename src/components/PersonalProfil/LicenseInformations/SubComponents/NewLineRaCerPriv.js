@@ -2,17 +2,6 @@ import React, { Component } from 'react';
 import { Row, Col, Form, InputGroup } from 'react-bootstrap';
 
 class NewLineRaCerPriv extends Component {
-    constructor(props){
-        super(props)
-        this.state={
-            theKey:props.theKey,
-            index:props.index,
-        }
-    }
-
-    callback(){
-        console.log(this.state)
-    }
 
     fillInForm(){
         if(this.props.theKey === 'ClassTypeRating'){

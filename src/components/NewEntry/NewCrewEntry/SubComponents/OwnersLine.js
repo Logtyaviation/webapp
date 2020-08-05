@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {FormCheck, Col, FormControl, Button, InputGroup, Row} from 'react-bootstrap'
+import {FormCheck, Col, FormControl, InputGroup, Row} from 'react-bootstrap'
 
 class OwnersLine extends Component {
 
