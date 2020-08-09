@@ -19,8 +19,8 @@ class AccountDetails extends Component {
                             type="email"
                             onChange={this.props.handleChange}
                             value={this.props.values.email}
+                            isValid={this.props.values.email && !this.props.errors.email}
                             isInvalid={!!this.props.errors.email}
-                            isValid={this.props.touched.email && !this.props.errors.email}
                             placeholder='Ex: john.travolta@hotmail.com'
                             />
                             <Form.Control.Feedback type='invalid'>{this.props.errors.email}</Form.Control.Feedback>
@@ -37,8 +37,8 @@ class AccountDetails extends Component {
                             type="password"
                             onChange={this.props.handleChange}
                             value={this.props.values.password}
+                            isValid={this.props.values.password && !this.props.errors.password}
                             isInvalid={!!this.props.errors.password}
-                            isValid={this.props.touched.password && !this.props.errors.password}
                             placeholder='Choose a password'
                             />
                             <Form.Control.Feedback type='invalid'>{this.props.errors.password}</Form.Control.Feedback>
@@ -52,8 +52,8 @@ class AccountDetails extends Component {
                             type="password"
                             onChange={this.props.handleChange}
                             value={this.props.values.confirmPassword}
+                            isValid={this.props.values.confirmPassword && !this.props.errors.confirmPassword}
                             isInvalid={!!this.props.errors.confirmPassword}
-                            isValid={this.props.touched.confirmPassword && !this.props.errors.confirmPassword}
                             placeholder='Confirm password'
                             />
                             <Form.Control.Feedback type='invalid'>{this.props.errors.confirmPassword}</Form.Control.Feedback>
