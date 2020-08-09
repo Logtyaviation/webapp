@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AccountDetails from './SubComponents/AccountDetails';
+import AccountDetails from '../../Register/SubComponent/AccountDetails';
 import DateOfBirth from './SubComponents/DateOfBirth';
 import FirstLastNames from './SubComponents/FirstLastNames';
 import { Container, Row } from 'react-bootstrap';
