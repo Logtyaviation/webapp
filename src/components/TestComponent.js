@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import DateOfBirth from './PersonalProfil/GeneralInformations/SubComponents/DateOfBirth';
-import FirstLastNames from './PersonalProfil/GeneralInformations/SubComponents/FirstLastNames';
+import NewCrewEntry from './NewEntry/NewCrewEntry/NewCrewEntry';
+import GeneralLoggedInNavBar from './NavBars/GeneralLoggedInNavBar';
 
 class TestComponent extends Component {
     
     render(){
         return(
             <>
-            <FirstLastNames/>
-            <DateOfBirth/>
+                <GeneralLoggedInNavBar/>
+                <NewCrewEntry/>
             </>
         )
     }
