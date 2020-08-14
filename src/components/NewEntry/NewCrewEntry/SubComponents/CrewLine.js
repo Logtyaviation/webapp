@@ -1,31 +1,41 @@
 import React, { Component } from 'react';
-import {Col, FormCheck, FormControl, Row, InputGroup} from 'react-bootstrap'
+import {Col, Form, Row, InputGroup} from 'react-bootstrap'
 
 class NewCrewLine extends Component {
 
     render() {
         return (
             <Row>
-                <Col md={9} style={{background:''}}>
+                <Col md={9}>
                     <InputGroup>
                         <InputGroup.Prepend>
                             <InputGroup.Text>First</InputGroup.Text>
                         </InputGroup.Prepend>
-                        <FormControl 
+                        <Form.Control 
                         placeholder='Ex: Neil'
                         name='CrewFirstName'
+                        id='CrewFirstName'
+                        //onChange={this.props.handleChange}
+                        //isValid={this.props.values.CrewFirstName && !this.props.errors.CrewFirstName}
+                        //isInvalid={this.props.errors.CrewFirstName}
                         />
+                        <Form.Control.Feedback type='invalid'>{this.props.errors.CrewFirstName}</Form.Control.Feedback>
                         <InputGroup.Prepend>
                             <InputGroup.Text>Last</InputGroup.Text>
                         </InputGroup.Prepend>
-                        <FormControl 
+                        <Form.Control 
                         placeholder='Ex: Armstrong'
                         name='CrewLastName'
+                        id='CrewLasttName'
+                        //onChange={this.props.handleChange}
+                        //isValid={this.props.values.CrewLastName && !this.props.errors.CrewLastName}
+                        //isInvalid={this.props.errors.CrewFirstLastName}
                         />
+                        <Form.Control.Feedback type='invalid'>{this.props.errors.CrewLastName}</Form.Control.Feedback>
                     </InputGroup>
                 </Col>
-                <Col md={3} style={{background:''}}>
-                    <FormCheck
+                <Col md={3}>
+                    <Form.Check
                     type='radio'
                     name='ActedAsPIC'
                     label='Acted as PIC'/>

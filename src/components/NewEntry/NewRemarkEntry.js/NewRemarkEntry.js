@@ -10,10 +10,14 @@ class NewRemarkEntry extends Component {
             Remark(s)
             <Row>
                 <Col>
-                    <TextArea/>
+                    <TextArea
+                    handleChange={this.props.handleChange}
+                    values={this.props.values}/>
                 </Col>
                 <Col md={2}>
-                    <RemarksRadio/>
+                    <RemarksRadio
+                    handleChange={this.props.handleChange}
+                    values={this.props.values}/>
                 </Col>
             </Row>
             </Container>

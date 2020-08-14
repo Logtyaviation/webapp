@@ -15,11 +15,11 @@ class AddCrewButton extends Component {
             LogbookHolderLastName:'Solse',
             crewMembers:[]
         }
-        this.handleChange=this.handleChange.bind(this)
+        this.handleSelect=this.handleSelect.bind(this)
         this.handleDelete=this.handleDelete.bind(this)
     }
 
-    handleChange(eventKey){
+    handleSelect(eventKey){
         const addNewCrewMember=this.state.crewMembers
         addNewCrewMember.push(eventKey)
         this.setState({
@@ -49,7 +49,11 @@ class AddCrewButton extends Component {
                     <CrewRankDropdown selectedKey={selectedKey}/>
                 </Col>
                 <Col md={8}>
-                    <CrewLine/>
+                    <CrewLine
+                    handleChange={this.props.handleChange}
+                    values={this.props.values}
+                    errors={this.props.errors}
+                    />
                 </Col>
                 <Col md={2}>
                     <Button 
@@ -70,7 +74,7 @@ class AddCrewButton extends Component {
                         <DropdownButton
                             drop='right'
                             title='Add crew member'
-                            onSelect={this.handleChange}
+                            onSelect={this.handleSelect}
                             >
                             <Dropdown.Item eventKey='Captain'>Captain</Dropdown.Item>
                             <Dropdown.Item eventKey='First Officer'>First Officer</Dropdown.Item>

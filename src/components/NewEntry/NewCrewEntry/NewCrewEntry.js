@@ -10,7 +10,11 @@ class NewCrewEntry extends Component {
             <Container fluid>
                 Crewing informations
                 <Header/>
-                <AddCrewButton counter={1}/>
+                <AddCrewButton
+                handleChange={this.props.handleChange}
+                values={this.props.values}
+                errors={this.props.errors}
+                />
             </Container>
         );
     }

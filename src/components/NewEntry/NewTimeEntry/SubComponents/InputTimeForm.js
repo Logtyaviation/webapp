@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
-import {InputGroup, FormControl } from 'react-bootstrap'
+import {InputGroup, FormControl, Form } from 'react-bootstrap'
 
 class InputTimeForm extends Component {
-    constructor(props){
-        super(props)
-        this.state=({
-            label:props.label,
-            example:props.example
-        })
-    }
 
     render() {
         return (
@@ -18,7 +11,14 @@ class InputTimeForm extends Component {
                 </InputGroup.Prepend>
                 <FormControl
                 placeholder={this.props.example}
+                name='TotalBlockTime'
+                id='TotalBlockTime'
+                onChange={this.props.handleChange}
+                value={this.props.values.TotalBlockTime}
+                isValid={this.props.values.TotalBlockTime && !this.props.errors.TotalBlockTime}
+                isInvalid={!!this.props.errors.TotalBlockTime}
                 />
+                <Form.Control.Feedback type='invalid'>{this.props.errors.TotalBlockTime}</Form.Control.Feedback>
             </InputGroup>
         );
     }

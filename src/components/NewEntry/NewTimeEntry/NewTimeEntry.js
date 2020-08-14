@@ -10,7 +10,12 @@ class NewTimeEntry extends Component {
             Time allocation
             <Row>
                 <Col md={3}>
-                    <InputTimeForm label={'Total time'} example={'Ex: 04:38'}/>
+                    <InputTimeForm 
+                    label={'Tot. time'} 
+                    example={'Ex: 04:38'}
+                    handleChange={this.props.handleChange}
+                    values={this.props.values}
+                    errors={this.props.errors}/>
                 </Col>
                 <Col>
                     <Accordion>

@@ -12,13 +12,24 @@ class NewDepartureEntry extends Component {
                 Departure informations
                 <Row>
                     <Col md={5}>
-                        <NewDepartureEntryForm/>
+                        <NewDepartureEntryForm
+                        handleChange={this.props.handleChange}
+                        values={this.props.values}
+                        errors={this.props.errors}/>
                     </Col>
                     <Col md={3}>
-                        <NewDepartureEntryTimeOfDay/>
+                        <NewDepartureEntryTimeOfDay
+                        handleChange={this.props.handleChange}
+                        values={this.props.values}
+                        errors={this.props.errors}
+                        />
                     </Col> 
                     <Col md={4}>
-                        <NewDepartureEntryTakeOff/>
+                        <NewDepartureEntryTakeOff
+                        handleChange={this.props.handleChange}
+                        values={this.props.values}
+                        errors={this.props.errors}
+                        />
                     </Col>
                 </Row>   
             </Container>

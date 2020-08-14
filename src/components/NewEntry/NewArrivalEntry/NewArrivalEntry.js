@@ -3,7 +3,6 @@ import { Col, Container, Row} from 'react-bootstrap'
 import NewArrivalEntryForm from './SubComponents/NewArrivalEntryForm'
 import NewArrivalEntryTimeOfDay from './SubComponents/NewArrivalEntryTimeOfDay'
 import NewArrivalEntryLandingAmount from './SubComponents/NewArrivalEntryLandingAmount'
-import NewArrivalEntryLandingRemarks from './SubComponents/NewArrivalEntryLandingRemarks'
 
 class NewArrivalEntry extends Component {
     render() {
@@ -12,20 +11,22 @@ class NewArrivalEntry extends Component {
             Arrival informations
                 <Row>
                     <Col md={5}>
-                        <NewArrivalEntryForm/>
+                        <NewArrivalEntryForm
+                        handleChange={this.props.handleChange}
+                        values={this.props.values}
+                        errors={this.props.errors}/>
                     </Col>
                     <Col m={3}>
-                        <NewArrivalEntryTimeOfDay/>
+                        <NewArrivalEntryTimeOfDay
+                        handleChange={this.props.handleChange}
+                        values={this.props.values}
+                        errors={this.props.errors}/>
                     </Col>                   
                     <Col md={4}>
-                        <NewArrivalEntryLandingAmount/>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={5}>
-                    </Col>
-                    <Col>
-                        <NewArrivalEntryLandingRemarks/>
+                        <NewArrivalEntryLandingAmount
+                        handleChange={this.props.handleChange}
+                        values={this.props.values}
+                        errors={this.props.errors}/>
                     </Col>
                 </Row>
             </Container>

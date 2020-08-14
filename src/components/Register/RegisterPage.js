@@ -30,7 +30,6 @@ const RegisterPage = () => {
                 handleSubmit,
                 handleChange,
                 values,
-                touched,
                 errors,
             }) => (
             <Container fluid>
@@ -38,8 +37,7 @@ const RegisterPage = () => {
                     <AccountDetails 
                         handleChange={handleChange} 
                         values={values}
-                        touched={touched}
-                        errors={errors}/>
+                        errors={errors} />
                     <Button type='submit'>Register</Button> 
                 </Form>
             </Container>

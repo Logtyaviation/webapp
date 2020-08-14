@@ -10,10 +10,18 @@ class NewAircraftEntry extends Component {
             Aircraft informations
                 <Row>
                     <Col md={5}>
-                        <RegistrationAndType/>
+                        <RegistrationAndType
+                        handleChange={this.props.handleChange}
+                        values={this.props.values}
+                        errors={this.props.errors}
+                        />
                     </Col>
                     <Col>
-                        <SEMEandSPMP/>
+                        <SEMEandSPMP
+                        handleChange={this.props.handleChange}
+                        values={this.props.values}
+                        errors={this.props.errors}
+                        />
                     </Col>
                 </Row>
             </Container>

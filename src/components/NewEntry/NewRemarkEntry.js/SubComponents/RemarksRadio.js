@@ -8,15 +8,28 @@ class RemarksRadio extends Component {
                 <Row>
                     <Form.Check
                     type='checkbox'
-                    label='General remark'
-                    name='RemarkGeneral'
+                    label='Line-check'
+                    name='RemarkLineCheck'
+                    id='RemarkLineCheck'
+                    onChange={this.props.handleChange}
                     />    
                 </Row>
                 <Row>
                     <Form.Check
                     type='checkbox'
-                    label='Line-check'
-                    name='RemarkLineCheck'
+                    label='Autoland'
+                    name='RemarkAutoland'
+                    id='RemarkAutoland'
+                    onChange={this.props.handleChange}
+                    />    
+                </Row>
+                <Row>
+                    <Form.Check
+                    type='checkbox'
+                    label='Monitored approach'
+                    name='RemarkMonitoredApproach'
+                    id='RemarkMonitoredApproach'
+                    onChange={this.props.handleChange}
                     />    
                 </Row>
                 <Row>
@@ -24,6 +37,7 @@ class RemarksRadio extends Component {
                     type='checkbox'
                     label='Go-around'
                     name='RemarkGoAround'
+                    onChange={this.props.handleChange}
                     />    
                 </Row>
                 <Row>
@@ -31,6 +45,7 @@ class RemarksRadio extends Component {
                     type='checkbox'
                     label='Diversion'
                     name='RemarkDiversion'
+                    onChange={this.props.handleChange}
                     />    
                 </Row>
             </Form>

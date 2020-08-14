@@ -8,10 +8,16 @@ class TextArea extends Component {
                 <Form.Control 
                 as='textarea' 
                 placeholder='Ex :
+                - ILS CAT III performed.
                 - Annual Line check performed by Chesley Sullenberg.
-                - Go around due to ATC.' 
-                rows='3'
-                name='RemarkText'/>
+                - Go around due to ATC.
+                - ...' 
+                rows='5'
+                name='TextRemarks'
+                id='TextRemarks'
+                onChange={this.props.handleChange}
+                value={this.props.values.TextRemarks}
+                />
             </Form>
         );
     }
