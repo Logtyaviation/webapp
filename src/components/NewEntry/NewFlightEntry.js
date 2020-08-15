@@ -7,7 +7,7 @@ import CrewInformationsTab from './NewEntryTabs/CrewInformationsTab';
 import RemarksTab from './NewEntryTabs/RemarksTab';
 
 const NewFlightEntry = () => {
-    const [key, setKey] = useState('DepartureAndArrival')
+    const [key, setKey] = useState('TimeAllocation')
     return (
             <Container fluid>
                 <Tabs

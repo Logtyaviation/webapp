@@ -4,7 +4,7 @@ import { Form } from 'react-bootstrap';
 class TextArea extends Component {
     render() {
         return (
-            <Form>
+            <>
                 <Form.Control 
                 as='textarea' 
                 placeholder='Ex :
@@ -18,7 +18,7 @@ class TextArea extends Component {
                 onChange={this.props.handleChange}
                 value={this.props.values.TextRemarks}
                 />
-            </Form>
+            </>
         );
     }
 }

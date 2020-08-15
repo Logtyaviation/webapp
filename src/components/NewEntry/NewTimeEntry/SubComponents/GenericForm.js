@@ -1,39 +1,15 @@
 import React, { Component } from 'react';
-import {Form, FormControl, Col, Row, FormCheck, Button} from 'react-bootstrap';
+import {Form, Col, Row, Button} from 'react-bootstrap';
 import NightTimeModal from './NightTimeModal';
 
 class GenericForm extends Component {
     constructor(props){
         super(props)
         this.state=({
-            example1:props.example1,
-            example2:props.example2,
-            label:props.label,
-            checked:false,
-            disabled1:true,
-            disabled2:true,
-            setShow:false
+            setShow:false,
         })
-        this.handleCheck=this.handleCheck.bind(this)
         this.handleShow=this.handleShow.bind(this)
         this.handleClose=this.handleClose.bind(this)
-    }
-
-    handleCheck(checked){
-        if(this.state.checked === false){
-            this.setState({
-                checked:true,
-                disabled1:false,
-                disabled2:true
-            })
-        }
-        else{
-            this.setState({
-                checked:false,
-                disabled1:true,
-                disabled2:false
-            })
-        }
     }
 
     handleShow(){
@@ -49,42 +25,73 @@ class GenericForm extends Component {
     }
 
     render() {
+        const {label}=this.props
         return (
-            <Form>
+            <>
                 <Row>
                     <Col>
-                        <FormCheck
+                        <Form.Check
                         type='radio'
                         label='Equal to total time'
-                        name={'TotalOrPart'+this.props.label}
-                        onChange={this.handleCheck}
+                        name={'TotalOrPart'+label+'Time'}
+                        onChange={e => {
+                            e.target.value = 'Total'+label+'Time'
+                            this.props.handleChange(e)
+                            const fakeEvent = {
+                                target:{
+                                    name:label+'Time',
+                                    value:this.props.values.TotalBlockTime
+                                }
+                            }
+                            this.props.handleChange(fakeEvent)
+                            console.log(this.props.values)
+                        }}                     
                         />
                     </Col>
                     <Col>
-                        <FormControl
-                        placeholder={this.props.example1}
-                        disabled={this.state.disabled1}
-                        />
-                    </Col>
-                    <Col>
-                        <FormCheck
+                        <Form.Check
                         type='radio'
                         label='Part only of total time'
-                        name={'TotalOrPart'+this.props.label}
-                        onChange={this.handleCheck}
+                        name={'TotalOrPart'+label+'Time'}
+                        onChange={e => {
+                            e.target.value = 'Part'+label+'Time'
+                            this.props.handleChange(e)
+                            const fakeEvent = {
+                                target:{
+                                    name:label+'Time',
+                                    value:''
+                                }
+                            }
+                            this.props.handleChange(fakeEvent)
+                            console.log(this.props.values)
+                            console.log(this.props.errors)
+                        }}
                         />
                     </Col>
                     <Col>
-                        <FormControl
+                        <Form.Control
                         placeholder={this.props.example2}
-                        disabled={this.state.disabled2}
+                        disabled={this.props.values['TotalOrPart'+label+'Time'] !== 'Part'+label+'Time'}
+                        id={label+'Time'}
+                        name={label+'Time'}
+                        value={
+                            this.props.values['TotalOrPart'+label+'Time'] !== 'Part'+label+'Time' ? 
+                            '':this.props.values[`${label}Time`]}
+                        onChange={this.props.handleChange}
+                        isValid={
+                            this.props.values['TotalOrPart'+label+'Time'] === 'Part'+label+'Time' ? 
+                            this.props.values[label+'Time'] && !this.props.errors[label+'Time']:false}
+                        isInvalid={
+                            this.props.values['TotalOrPart'+label+'Time'] !== 'Part'+label+'Time' ? 
+                            false:!!this.props.errors[label+'Time']}
                         />
+                        <Form.Control.Feedback type='invalid'>{this.props.errors[label+'Time']}</Form.Control.Feedback>
                     </Col>
-                    {this.props.label === 'PIC' ? <FormCheck type='checkbox' label='PICUS'/>:null}
-                    {this.props.label === 'Night time' ? <Button size='sm' onClick={this.handleShow}>Calculate</Button>:null}
+                    {label === 'PIC' ? <Form.Check type='checkbox' label='PICUS'/>:null}
+                    {label === 'Night time' ? <Button size='sm' onClick={this.handleShow}>Calculate</Button>:null}
                 </Row>
                 <NightTimeModal setShow={this.state.setShow} handleClose={this.handleClose} timeOfTheDay={'day'}/>
-            </Form>
+            </>
         );
     }
 }

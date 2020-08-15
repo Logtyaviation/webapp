@@ -19,12 +19,42 @@ class NewTimeEntry extends Component {
                 </Col>
                 <Col>
                     <Accordion>
-                        <GenericCard label={'Night time'} thekey={'0'}/>
-                        <GenericCard label={'IFR'} thekey={'1'}/>
-                        <GenericCard label={'Dual'} thekey={'2'}/>
-                        <GenericCard label={'PIC'} thekey={'3'}/>
-                        <GenericCard label={'Instructor'} thekey={'4'}/>
-                        <GenericCard label={'Co-pilot'} thekey={'5'}/>
+                        <GenericCard 
+                        label={'Night'} 
+                        thekey={'0'}
+                        handleChange={this.props.handleChange}
+                        values={this.props.values}
+                        errors={this.props.errors}/>
+                        <GenericCard 
+                        label={'IFR'} 
+                        thekey={'1'}
+                        handleChange={this.props.handleChange}
+                        values={this.props.values}
+                        errors={this.props.errors}/>
+                        <GenericCard 
+                        label={'Dual'} 
+                        thekey={'2'}
+                        handleChange={this.props.handleChange}
+                        values={this.props.values}
+                        errors={this.props.errors}/>
+                        <GenericCard 
+                        label={'PIC'} 
+                        thekey={'3'}
+                        handleChange={this.props.handleChange}
+                        values={this.props.values}
+                        errors={this.props.errors}/>
+                        <GenericCard 
+                        label={'Instructor'} 
+                        thekey={'4'}
+                        handleChange={this.props.handleChange}
+                        values={this.props.values}
+                        errors={this.props.errors}/>
+                        <GenericCard 
+                        label={'Copilot'} 
+                        thekey={'5'}
+                        handleChange={this.props.handleChange}
+                        values={this.props.values}
+                        errors={this.props.errors}/>
                     </Accordion>              
                 </Col>
             </Row>
