@@ -25,7 +25,8 @@ class GenericForm extends Component {
     }
 
     render() {
-        const {label}=this.props
+        const {label, handleChange, values, errors, example2} = this.props
+        const isPartTime = values[`TotalOrPart${label}Time`] === `Part${label}Time`;
         return (
             <>
                 <Row>
@@ -33,18 +34,16 @@ class GenericForm extends Component {
                         <Form.Check
                         type='radio'
                         label='Equal to total time'
-                        name={'TotalOrPart'+label+'Time'}
-                        onChange={e => {
-                            e.target.value = 'Total'+label+'Time'
-                            this.props.handleChange(e)
-                            const fakeEvent = {
+                        name={`TotalOrPart${label}Time`}
+                        onChange={async (e) => {
+                            e.target.value = `Total${label}Time`
+                            await handleChange(e)
+                            handleChange({
                                 target:{
-                                    name:label+'Time',
-                                    value:this.props.values.TotalBlockTime
+                                    name:`${label}Time`,
+                                    value:values.TotalBlockTime
                                 }
-                            }
-                            this.props.handleChange(fakeEvent)
-                            console.log(this.props.values)
+                            })
                         }}                     
                         />
                     </Col>
@@ -52,43 +51,34 @@ class GenericForm extends Component {
                         <Form.Check
                         type='radio'
                         label='Part only of total time'
-                        name={'TotalOrPart'+label+'Time'}
-                        onChange={e => {
-                            e.target.value = 'Part'+label+'Time'
-                            this.props.handleChange(e)
-                            const fakeEvent = {
-                                target:{
-                                    name:label+'Time',
+                        name={`TotalOrPart${label}Time`}
+                        onChange={async (e) => {
+                            e.target.value = `Part${label}Time`
+                            await handleChange(e)
+                            handleChange({
+                                target: {
+                                    name:`${label}Time`,
                                     value:''
                                 }
-                            }
-                            this.props.handleChange(fakeEvent)
-                            console.log(this.props.values)
-                            console.log(this.props.errors)
+                            })
                         }}
                         />
                     </Col>
                     <Col>
                         <Form.Control
-                        placeholder={this.props.example2}
-                        disabled={this.props.values['TotalOrPart'+label+'Time'] !== 'Part'+label+'Time'}
-                        id={label+'Time'}
-                        name={label+'Time'}
-                        value={
-                            this.props.values['TotalOrPart'+label+'Time'] !== 'Part'+label+'Time' ? 
-                            '':this.props.values[`${label}Time`]}
-                        onChange={this.props.handleChange}
-                        isValid={
-                            this.props.values['TotalOrPart'+label+'Time'] === 'Part'+label+'Time' ? 
-                            this.props.values[label+'Time'] && !this.props.errors[label+'Time']:false}
-                        isInvalid={
-                            this.props.values['TotalOrPart'+label+'Time'] !== 'Part'+label+'Time' ? 
-                            false:!!this.props.errors[label+'Time']}
+                        placeholder={example2}
+                        disabled={!isPartTime}
+                        id={`${label}Time`}
+                        name={`${label}Time`}
+                        value={values[`${label}Time`]}
+                        onChange={handleChange}
+                        isValid={isPartTime ? values[label+'Time'] && !errors[label+'Time'] : false}
+                        isInvalid={isPartTime ? !!errors[label+'Time'] : false}
                         />
-                        <Form.Control.Feedback type='invalid'>{this.props.errors[label+'Time']}</Form.Control.Feedback>
+                        <Form.Control.Feedback type='invalid'>{errors[label+'Time']}</Form.Control.Feedback>
                     </Col>
                     {label === 'PIC' ? <Form.Check type='checkbox' label='PICUS'/>:null}
-                    {label === 'Night time' ? <Button size='sm' onClick={this.handleShow}>Calculate</Button>:null}
+                    {label === 'Night' ? <Button size='sm' onClick={this.handleShow}>Calculate</Button>:null}
                 </Row>
                 <NightTimeModal setShow={this.state.setShow} handleClose={this.handleClose} timeOfTheDay={'day'}/>
             </>
