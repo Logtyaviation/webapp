@@ -5,6 +5,22 @@ import GenericCard from './SubComponents/GenericCard';
 
 class NewTimeEntry extends Component {
     render() {
+        const { handleChange, values, errors } = this.props
+        const cardLabels = ['Night', 'IFR', 'Dual', 'PIC', 'Instructor', 'Copilot']
+        const updateOthers = (event) => {
+            const promises = cardLabels.map(async (label) => {
+                if(values[`TotalOrPart${label}Time`] === `Total${label}Time`) {
+                    return handleChange({
+                        target: {
+                            name: `${label}Time`,
+                            value: event.target.value
+                        }
+                    })
+                }
+            })
+            return Promise.all(promises)
+        } 
+        
         return (
             <Container fluid>
             Time allocation
@@ -13,48 +29,24 @@ class NewTimeEntry extends Component {
                     <InputTimeForm 
                     label={'Tot. time'} 
                     example={'Ex: 04:38'}
-                    handleChange={this.props.handleChange}
-                    values={this.props.values}
-                    errors={this.props.errors}/>
+                    handleChange={async (e) => {
+                        await handleChange(e)
+                        updateOthers(e)
+                    }}
+                    values={values}
+                    errors={errors}/>
                 </Col>
                 <Col>
                     <Accordion>
-                        <GenericCard 
-                        label={'Night'} 
-                        thekey={'0'}
-                        handleChange={this.props.handleChange}
-                        values={this.props.values}
-                        errors={this.props.errors}/>
-                        <GenericCard 
-                        label={'IFR'} 
-                        thekey={'1'}
-                        handleChange={this.props.handleChange}
-                        values={this.props.values}
-                        errors={this.props.errors}/>
-                        <GenericCard 
-                        label={'Dual'} 
-                        thekey={'2'}
-                        handleChange={this.props.handleChange}
-                        values={this.props.values}
-                        errors={this.props.errors}/>
-                        <GenericCard 
-                        label={'PIC'} 
-                        thekey={'3'}
-                        handleChange={this.props.handleChange}
-                        values={this.props.values}
-                        errors={this.props.errors}/>
-                        <GenericCard 
-                        label={'Instructor'} 
-                        thekey={'4'}
-                        handleChange={this.props.handleChange}
-                        values={this.props.values}
-                        errors={this.props.errors}/>
-                        <GenericCard 
-                        label={'Copilot'} 
-                        thekey={'5'}
-                        handleChange={this.props.handleChange}
-                        values={this.props.values}
-                        errors={this.props.errors}/>
+                        {cardLabels.map((label, index) => (
+                            <GenericCard
+                                label={label}
+                                thekey={`${index}`}
+                                handleChange={handleChange}
+                                values={values}
+                                errors={errors}
+                            />
+                        ))}
                     </Accordion>              
                 </Col>
             </Row>

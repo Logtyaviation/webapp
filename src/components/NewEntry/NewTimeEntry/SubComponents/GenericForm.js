@@ -70,7 +70,7 @@ class GenericForm extends Component {
                         disabled={!isPartTime}
                         id={`${label}Time`}
                         name={`${label}Time`}
-                        value={values[`${label}Time`]}
+                        value={isPartTime ? values[`${label}Time`] : ''}
                         onChange={handleChange}
                         isValid={isPartTime ? values[label+'Time'] && !errors[label+'Time'] : false}
                         isInvalid={isPartTime ? !!errors[label+'Time'] : false}
