@@ -7,19 +7,6 @@ class NewTimeEntry extends Component {
     render() {
         const { handleChange, values, errors } = this.props
         const cardLabels = ['Night', 'IFR', 'Dual', 'PIC', 'Instructor', 'Copilot']
-        const updateOthers = (event) => {
-            const promises = cardLabels.map(async (label) => {
-                if(values[`TotalOrPart${label}Time`] === `Total${label}Time`) {
-                    return handleChange({
-                        target: {
-                            name: `${label}Time`,
-                            value: event.target.value
-                        }
-                    })
-                }
-            })
-            return Promise.all(promises)
-        } 
         
         return (
             <Container fluid>
@@ -29,10 +16,7 @@ class NewTimeEntry extends Component {
                     <InputTimeForm 
                     label={'Tot. time'} 
                     example={'Ex: 04:38'}
-                    handleChange={async (e) => {
-                        await handleChange(e)
-                        updateOthers(e)
-                    }}
+                    handleChange={handleChange}
                     values={values}
                     errors={errors}/>
                 </Col>

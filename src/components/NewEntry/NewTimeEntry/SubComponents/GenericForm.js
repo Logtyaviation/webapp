@@ -77,7 +77,12 @@ class GenericForm extends Component {
                         />
                         <Form.Control.Feedback type='invalid'>{errors[label+'Time']}</Form.Control.Feedback>
                     </Col>
-                    {label === 'PIC' ? <Form.Check type='checkbox' label='PICUS'/>:null}
+                    {label === 'PIC' ? <Form.Check 
+                        type='checkbox' 
+                        label='PICUS'
+                        name='PICUSTime'
+                        id='PICUSTime'
+                        onChange={handleChange}/>:null}
                     {label === 'Night' ? <Button size='sm' onClick={this.handleShow}>Calculate</Button>:null}
                 </Row>
                 <NightTimeModal setShow={this.state.setShow} handleClose={this.handleClose} timeOfTheDay={'day'}/>

@@ -17,7 +17,7 @@ class GenericCard extends Component {
             <Card>
                 <Card.Header>
                     <Accordion.Toggle eventKey={this.props.thekey}>{this.props.label}</Accordion.Toggle>
-                    &nbsp; Value is : {this.props.values[this.props.label + 'Time']}
+                    &nbsp; {this.props.values[`TotalOrPart${this.props.label}Time`] === `Total${this.props.label}Time` ? this.props.values.TotalBlockTime:this.props.values[this.props.label + 'Time']} {this.props.values[`TotalOrPart${this.props.label}Time`] === '' ? null:' Hours'}
                 </Card.Header>
                 <Accordion.Collapse eventKey={this.props.thekey}>
                     <Card.Body>

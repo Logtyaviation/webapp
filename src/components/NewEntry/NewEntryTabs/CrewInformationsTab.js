@@ -6,10 +6,11 @@ import NewCrewEntry from '../NewCrewEntry/NewCrewEntry';
 
 const CrewInformationsTab = (props) => {
 
-    const schema = yup.object({
-         //CrewFirstName:yup.string().required('First name'),
-    //CrewLastName:yup.string().required('Last name'),
-    })
+    const schema = yup.array().of(yup.object({
+        CrewFirstName:yup.string().required('Please enter the first name'),
+        CrewLastName:yup.string().required('Please enter the last name'),
+        CrewIsPIC:yup.string()
+    }))
 
     return(
         <Formik
@@ -20,8 +21,11 @@ const CrewInformationsTab = (props) => {
                 props.changeTab('Remarks')
             }}
             initialValues={{
-                //CrewFirstName:'',
-                //CrewLastName:'',
+                CrewList:[{
+                    CrewFirstName:'',
+                    CrewLastName:'',
+                    CrewIsPIC:'',
+                }]
             }}
         >
             {({
@@ -30,7 +34,7 @@ const CrewInformationsTab = (props) => {
                 values,
                 errors,
             }) => (
-                <Form noValidate onSubmit={handleSubmit}>
+                <Form>
                     <Row>
                         <Col>
                             <NewCrewEntry
@@ -39,7 +43,7 @@ const CrewInformationsTab = (props) => {
                             errors={errors}/>
                         </Col>
                     </Row>
-                    <Button type='submit'>Next: Remarks</Button>
+                    <Button>Next: Remarks</Button>
                 </Form>
             )}
         </Formik>

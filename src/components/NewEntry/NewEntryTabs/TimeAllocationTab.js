@@ -11,7 +11,7 @@ const TimeAllocationTab = (props) => {
         TotalOrPartNightTime:yup.string(),
         NightTime:yup.string().when('TotalOrPartNightTime', {
             is:'PartNightTime',
-            then: yup.string().min(5).required('Please enter the part time')
+            then: yup.string().required('Please enter the part time')
         }),
         TotalOrPartIFRTime:yup.string(),
         IFRTime:yup.string().when('TotalOrPartIFRTime', {
@@ -62,6 +62,7 @@ const TimeAllocationTab = (props) => {
                 InstructorTime:'',
                 TotalOrPartCopilotTime:'',
                 CopilotTime:'',
+                PICUSTime:'',
             }}
         >
             {({
