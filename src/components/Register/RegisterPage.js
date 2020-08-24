@@ -40,8 +40,7 @@ const RegisterPage = () => {
                         errors={errors} />
                     <Button type='submit'>Register</Button> 
                 </Form>
-            </Container>
-                
+            </Container>                
             )}
         </Formik>
     )

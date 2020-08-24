@@ -1,62 +1,68 @@
 import React, { Component } from 'react';
-import {Form, Row, Col, Container, InputGroup } from 'react-bootstrap';
+import {Form, InputGroup } from 'react-bootstrap';
 
 class FirstLastNames extends Component {
     render() {
+        const {handleChange, errors, values} = this.props
         return (
-            <Container fluid>
-                <Form>
-                    <Form.Group>
-                        <Form.Label>Name(s)</Form.Label>
-                        <Row>
-                            <Col>
-                                <InputGroup>
-                                    <Form.Group>
-                                        <InputGroup.Prepend>
-                                            <InputGroup.Text>Last name(s)</InputGroup.Text>
-                                        </InputGroup.Prepend>
-                                    </Form.Group>
-                                    <Form.Group>
-                                        <Form.Control
-                                        name='LogbookHolderLastName'
-                                        placeholder='Ex: Travolta'
-                                        />
-                                    </Form.Group>
-                                    <Form.Group>
-                                        <Form.Control
-                                        name='CTDLogbookHolderLastName'
-                                        placeholder='Other last name(s)*'
-                                        />
-                                        <Form.Text className='text-muted'>*Optional</Form.Text>
-                                    </Form.Group>
-                                </InputGroup>
-                            </Col>
-                            <Col>
-                                <InputGroup>
-                                    <Form.Group>
-                                        <InputGroup.Prepend>
-                                            <InputGroup.Text>First name(s)</InputGroup.Text>
-                                        </InputGroup.Prepend>
-                                    </Form.Group>
-                                    <Form.Group>
-                                        <Form.Control
-                                        name='LogbookHolderFirstName'
-                                        placeholder='Ex: John'
-                                        />
-                                    </Form.Group>
-                                    <Form.Group>
-                                        <Form.Control
-                                        name='CTDLogbookHolderFirstName'
-                                        placeholder='Other first name(s)*'
-                                        />
-                                        <Form.Text className='text-muted'>*Optional</Form.Text>
-                                    </Form.Group>
-                                </InputGroup>
-                            </Col>
-                        </Row>
-                    </Form.Group>
-                </Form>
-            </Container>
+        <>
+        <Form.Label>Name(s)</Form.Label>
+            <InputGroup>
+                <InputGroup.Prepend>
+                    <InputGroup.Text>Last name(s)</InputGroup.Text>
+                </InputGroup.Prepend>
+                <Form.Control
+                id='LogbookHolderLastName'
+                name='LogbookHolderLastName'
+                placeholder='Ex: Travolta'
+                value={values.LogbookHolderLastName}
+                onChange={handleChange}
+                isValid={values.LogbookHolderLastName && !errors.LogbookHolderLastName}
+                isInvalid={!!errors.LogbookHolderLastName}
+                />
+                <Form.Control
+                name='CTDLogbookHolderLastName'
+                id='CTDLogbookHolderLastName'
+                placeholder='Other last name(s) (Optional)'
+                onChange={handleChange}
+                value={values.CTDLogbookHolderLastName}
+                isValid={values.CTDLogbookHolderLastName && !errors.CTDLogbookHolderLastName}
+                isInvalid={!!errors.CTDLogbookHolderLastName}
+                />
+                <Form.Control.Feedback type='invalid'>
+                    {errors.LogbookHolderLastName}
+                    {errors.CTDLogbookHolderLastName === '' ? null:errors.CTDLogbookHolderLastName}
+                </Form.Control.Feedback>
+            </InputGroup>
+            <InputGroup>
+                <InputGroup.Prepend>
+                    <InputGroup.Text>First name(s)</InputGroup.Text>
+                </InputGroup.Prepend>
+                <Form.Control
+                name='LogbookHolderFirstName'
+                placeholder='Ex: John'
+                id='LogbookHolderFirstName'
+                value={values.LogbookHolderFirstName}
+                onChange={handleChange}
+                isValid={values.LogbookHolderFirstName && !errors.LogbookHolderFirstName}
+                isInvalid={!!errors.LogbookHolderFirstName}
+                />
+                <Form.Control
+                name='CTDLogbookHolderFirstName'
+                id='CTDLogbookHolderFirstName'
+                placeholder='Other first name(s) (Optional)'
+                onChange={handleChange}
+                value={values.CTDLogbookHolderFirstName}
+                isValid={values.CTDLogbookHolderFirstName && !errors.CTDLogbookHolderFirstName}
+                isInvalid={!!errors.CTDLogbookHolderFirstName}
+                />
+                <Form.Control.Feedback type='invalid'>
+                    {errors.LogbookHolderFirstName}
+                    {errors.CTDLogbookHolderFirstName === '' ? null:errors.CTDLogbookHolderFirstName}
+                </Form.Control.Feedback>            
+            </InputGroup>
+
+        </>
         );
     }
 }
