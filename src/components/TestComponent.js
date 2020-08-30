@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NewCrewEntry from './NewEntry/NewCrewEntry/NewCrewEntry';
 import GeneralLoggedInNavBar from './NavBars/GeneralLoggedInNavBar';
 
 class TestComponent extends Component {
@@ -8,7 +7,6 @@ class TestComponent extends Component {
         return(
             <>
                 <GeneralLoggedInNavBar/>
-                <NewCrewEntry/>
             </>
         )
     }

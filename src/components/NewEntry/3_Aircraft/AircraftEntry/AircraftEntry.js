@@ -5,6 +5,7 @@ import SEMEandSPMP from './Components/SEMEandSPMP';
 
 const AircraftEntry = (props) => {
     const { values, errors, handleChange } = props
+    
         return (
             <Container fluid>
             Aircraft informations
