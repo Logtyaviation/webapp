@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import {Container, Tabs, Tab} from 'react-bootstrap'
 import TakeOffAndLandingTab from './1_TakeOffAndLanding/TakeOffAndLandingTab';
-import TimeAllocationTab from './NewEntryTabs/TimeAllocationTab';
 import AicraftInformationsTab from './NewEntryTabs/AircraftInformationsTab';
 import CrewInformationsTab from './NewEntryTabs/CrewInformationsTab';
 import RemarksTab from './NewEntryTabs/RemarksTab';
+import TimeAllocationTab from './2_TimeAllocation/TimeAllocationTab';
 
 const FlightEntry = () => {
-    const [key, setKey] = useState('DepartureAndArrival')
+    const [key, setKey] = useState('TimeAllocation')
     return (
             <Container fluid>
                 <Tabs

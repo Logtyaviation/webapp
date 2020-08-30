@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Accordion, Col, Container} from 'react-bootstrap';
-import InputTimeForm from './SubComponents/InputTimeForm';
-import GenericCard from './SubComponents/GenericCard';
+import FormTotalBlockTime from './Components/FormTotalBlockTime';
+import CardLabelTimeGeneric from './Components/SharedComponents/CardLabelTimeGeneric';
 
 class NewTimeEntry extends Component {
     render() {
@@ -13,7 +13,7 @@ class NewTimeEntry extends Component {
             Time allocation
             <Row>
                 <Col md={3}>
-                    <InputTimeForm 
+                    <FormTotalBlockTime 
                     label={'Tot. time'} 
                     example={'Ex: 04:38'}
                     handleChange={handleChange}
@@ -23,7 +23,7 @@ class NewTimeEntry extends Component {
                 <Col>
                     <Accordion>
                         {cardLabels.map((label, index) => (
-                            <GenericCard
+                            <CardLabelTimeGeneric
                                 label={label}
                                 thekey={`${index}`}
                                 handleChange={handleChange}

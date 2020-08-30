@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {Form, Col, Row, Button} from 'react-bootstrap';
-import NightTimeModal from './NightTimeModal';
+import ModalNightTimeCalculator from '../ModalNightTimeCalculator';
 
-class GenericForm extends Component {
+class FormLabelTotalOrPartTimeGeneric extends Component {
     constructor(props){
         super(props)
         this.state=({
@@ -85,10 +85,10 @@ class GenericForm extends Component {
                         onChange={handleChange}/>:null}
                     {label === 'Night' ? <Button size='sm' onClick={this.handleShow}>Calculate</Button>:null}
                 </Row>
-                <NightTimeModal setShow={this.state.setShow} handleClose={this.handleClose} timeOfTheDay={'day'}/>
+                <ModalNightTimeCalculator setShow={this.state.setShow} handleClose={this.handleClose} timeOfTheDay={'day'}/>
             </>
         );
     }
 }
 
-export default GenericForm;
+export default FormLabelTotalOrPartTimeGeneric;

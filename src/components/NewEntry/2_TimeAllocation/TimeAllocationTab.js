@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Button, Form} from 'react-bootstrap'
 import { Formik } from 'formik'
 import  * as yup from 'yup'
-import NewTimeEntry from '../NewTimeEntry/NewTimeEntry';
+import NewTimeEntry from './TimeEntry/TimeEntry';
 
 const TimeAllocationTab = (props) => {
 
