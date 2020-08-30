@@ -2,23 +2,23 @@ import React from 'react';
 import {Row, Col, Button, Form} from 'react-bootstrap'
 import { Formik } from 'formik'
 import  * as yup from 'yup'
-import NewDepartureEntry from '../NewDepartureEntry/NewDepartureEntry';
-import NewArrivalEntry from '../NewArrivalEntry/NewArrivalEntry';
+import TakeOffEntry from './TakeOffOrLandingEntry/TakeOffEntry';
+import LandingEntry from './TakeOffOrLandingEntry/LandingEntry';
 
 const schema = yup.object({
-    DateOfDeparture:yup.string().required('Departure date is required'),
-    TimeOfDeparture:yup.string().required('Departure time is required'),
-    PlaceOfDeparture:yup.string().required('Departure airport is required').min(3,'Enter ICAO or IATA code').max(4, 'Enter ICAO or IATA code'),
+    DateOfTakeOff:yup.string().required('Take Off date is required'),
+    TimeOfTakeOff:yup.string().required('Take Off time is required'),
+    AirportOfTakeOff:yup.string().required('Take Off airport is required').min(3,'Enter ICAO or IATA code').max(4, 'Enter ICAO or IATA code'),
     TimeOfDayTakeOff:yup.string().required('Please choose day or night'),
-    NumberOfTO:yup.number().required('Please choose a whole number bigger than 0').integer('Can not be decimal').min(0, 'Can not be negative'),
-    DateOfArrival:yup.string().required('Arrival date is required'),
-    TimeOfArrival:yup.string().required('Arrival time is required'),
-    PlaceOfArrival:yup.string().required('Arrival airport is required').min(3,'Enter ICAO or IATA code').max(4,'Enter ICAO or IATA code'),
+    AmountOfTakeOffs:yup.number().required('Please choose a whole number bigger than 0').integer('Can not be decimal').min(0, 'Can not be negative'),
+    DateOfLanding:yup.string().required('Landing date is required'),
+    TimeOfLanding:yup.string().required('Landing time is required'),
+    AirportOfLanding:yup.string().required('Landing airport is required').min(3,'Enter ICAO or IATA code').max(4,'Enter ICAO or IATA code'),
     TimeOfDayLanding:yup.string().required('Please choose day or night'),
-    NumberOfLDG:yup.number().required('Please choose a whole number bigger than 0').integer('Can not be decimal').min(0, 'Can not be negative'),
+    AmountOfLandings:yup.number().required('Please choose a whole number bigger than 0').integer('Can not be decimal').min(0, 'Can not be negative'),
 })
 
-const DepartureAndArrivalTab = (props) => {
+const TakeOffAndLandingTab = (props) => {
     return(
         <Formik
             validationSchema={schema}
@@ -28,16 +28,16 @@ const DepartureAndArrivalTab = (props) => {
                 props.changeTab('TimeAllocation')
             }}
             initialValues={{
-                DateOfDeparture:'',
-                TimeOfDeparture:'',
-                PlaceOfDeparture:'',
+                DateOfTakeOff:'',
+                TimeOfTakeOff:'',
+                AirportOfTakeOff:'',
                 TimeOfDayTakeOff:'',
-                NumberOfTO:'',
-                DateOfArrival:'',
-                TimeOfArrival:'',
+                AmountOfTakeOffs:'',
+                DateOfLanding:'',
+                TimeOfLanding:'',
+                AirportOfLanding:'',
                 TimeOfDayLanding:'',
-                NumberOfLDG:'',
-                PlaceOfArrival:''
+                AmountOfLandings:''
             }}
         >
             {({
@@ -49,13 +49,13 @@ const DepartureAndArrivalTab = (props) => {
                 <Form noValidate onSubmit={handleSubmit}>
                     <Row>
                         <Col>
-                        <NewDepartureEntry
+                        <TakeOffEntry
                             handleChange={handleChange}
                             values={values}
                             errors={errors}/>
                         </Col>
                         <Col>
-                            <NewArrivalEntry
+                            <LandingEntry
                             handleChange={handleChange}
                             values={values}
                             errors={errors}/>
@@ -68,4 +68,4 @@ const DepartureAndArrivalTab = (props) => {
     )
 }
 
-export default DepartureAndArrivalTab
+export default TakeOffAndLandingTab

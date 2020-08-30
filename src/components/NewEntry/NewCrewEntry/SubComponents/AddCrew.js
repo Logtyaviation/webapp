@@ -5,7 +5,7 @@ import  * as yup from 'yup'
 import { Col, Button, Row, InputGroup, Form, DropdownButton, Dropdown } from "react-bootstrap";
 
 const schema = yup.object({
-    Crew: yup.array().of(yup.object({
+    CrewList: yup.array().of(yup.object({
         CrewFirstName: yup.string().required('Please enter the first name'),
         CrewLastName: yup.string().required('Please enter the last name'),
         CrewRank: yup.string().required(),

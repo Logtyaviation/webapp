@@ -3,7 +3,7 @@ import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Homepage from './components/Homepage';
 import TableLogbook from './components/Table/Table';
-import NewFlightEntry from './components/NewEntry/NewFlightEntry';
+import FlightEntry from './components/NewEntry/FlightEntry';
 import TestComponent from './components/TestComponent';
 import CreateNewProfil from './components/PersonalProfil/CreateNewProfil';
 import RegisterPage from './components/Register/RegisterPage'
@@ -16,7 +16,7 @@ class Logty extends Component {
         <div>
           <Route exact path='/' component={Homepage}/>
           <Route path='/Table' component={TableLogbook}/>
-          <Route path='/NewFlightEntry' component={NewFlightEntry}/>
+          <Route path='/NewFlightEntry' component={FlightEntry}/>
           <Route path='/TestPage' component={TestComponent}/>
           <Route path='/CreateNewProfil' component={CreateNewProfil}/>
           <Route path='/Register' component={RegisterPage}/>
