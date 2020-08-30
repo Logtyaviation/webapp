@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Button, Form} from 'react-bootstrap'
 import { Formik } from 'formik'
 import  * as yup from 'yup'
-import NewAircraftEntry from '../NewAircraftEntry/NewAircraftEntry';
+import AircraftEntry from './AircraftEntry/AircraftEntry';
 
 const AircraftInformationsTab = (props) => {
 
@@ -37,7 +37,7 @@ const AircraftInformationsTab = (props) => {
                 <Form noValidate onSubmit={handleSubmit}>
                     <Row>
                         <Col>
-                            <NewAircraftEntry
+                            <AircraftEntry
                             handleChange={handleChange}
                             values={values}
                             errors={errors}/>
