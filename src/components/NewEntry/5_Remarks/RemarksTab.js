@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Button, Form} from 'react-bootstrap'
 import { Formik } from 'formik'
 import  * as yup from 'yup'
-import NewRemarkEntry from '../NewRemarkEntry.js/NewRemarkEntry';
+import RemarkEntry from './RemarksEntry/RemarksEntry';
 
 const RemarksTab = () => {
 
@@ -35,7 +35,7 @@ const RemarksTab = () => {
                 <Form noValidate onSubmit={handleSubmit}>
                     <Row>
                         <Col>
-                            <NewRemarkEntry
+                            <RemarkEntry
                             handleChange={handleChange}
                             values={values}
                             errors={errors}/>

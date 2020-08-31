@@ -3,11 +3,11 @@ import {Container, Tabs, Tab} from 'react-bootstrap'
 import TakeOffAndLandingTab from './1_TakeOffAndLanding/TakeOffAndLandingTab';
 import AicraftInformationsTab from './3_Aircraft/AircraftInformationsTab';
 import CrewInformationsTab from './4_Crew/CrewInformationsTab';
-import RemarksTab from './NewEntryTabs/RemarksTab';
 import TimeAllocationTab from './2_TimeAllocation/TimeAllocationTab';
+import RemarksTab from './5_Remarks/RemarksTab';
 
 const FlightEntry = () => {
-    const [key, setKey] = useState('CrewInformations')
+    const [key, setKey] = useState('DepartureAndArrival')
     return (
             <Container fluid>
                 <Tabs
