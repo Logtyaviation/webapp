@@ -18,7 +18,7 @@ const CrewInformationsTab = (props) => {
         }).required()),
         PIC: yup.string().required()
     });
-    
+
     const initialValues = {
         CrewList: [{
             CrewFirstName: 'Elon',
@@ -28,14 +28,13 @@ const CrewInformationsTab = (props) => {
         }],
         PIC: ''
     };
-    
+
     return(
         <Formik
             validationSchema={schema}
             onSubmit={values => {
-                console.log('Crew informations data')
-                console.log('Simulating presaving data', values)
                 props.changeTab('Remarks')
+                props.presave(values)
             }}
             initialValues={initialValues}
         >

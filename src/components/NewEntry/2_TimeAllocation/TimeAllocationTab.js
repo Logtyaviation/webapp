@@ -44,8 +44,7 @@ const TimeAllocationTab = (props) => {
         <Formik
             validationSchema={schema}
             onSubmit={values => {
-                console.log('Time allocation data')
-                console.log('Simulating presaving data', values)
+                props.presave(values)
                 props.changeTab('AircraftInformations')
             }}
             initialValues={{

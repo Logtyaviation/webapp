@@ -17,9 +17,8 @@ const AircraftInformationsTab = (props) => {
         <Formik
             validationSchema={schema}
             onSubmit={values => {
-                console.log('Aircraft informations data')
-                console.log('Simulating presaving data', values)
                 props.changeTab('CrewInformations')
+                props.presave(values)
             }}
             initialValues={{
                 AircraftRegistration:'',

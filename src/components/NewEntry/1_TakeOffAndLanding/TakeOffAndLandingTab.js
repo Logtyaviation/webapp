@@ -23,8 +23,7 @@ const TakeOffAndLandingTab = (props) => {
         <Formik
             validationSchema={schema}
             onSubmit={values => {
-                console.log('New departure and arrival data : ', values)
-                console.log('Simulating presaving data')
+                props.presave(values)
                 props.changeTab('TimeAllocation')
             }}
             initialValues={{

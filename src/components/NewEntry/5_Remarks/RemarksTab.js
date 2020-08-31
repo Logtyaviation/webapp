@@ -4,18 +4,18 @@ import { Formik } from 'formik'
 import  * as yup from 'yup'
 import RemarkEntry from './RemarksEntry/RemarksEntry';
 
-const RemarksTab = () => {
+const RemarksTab = (props) => {
 
     const schema = yup.object({
-        
+
     })
 
     return(
         <Formik
             validationSchema={schema}
-            onSubmit={values => {
-                console.log('Remarks data')
-                console.log('Simulating presaving data', values)
+            onSubmit={async (values) => {
+                await props.presave(values)
+                props.save()
             }}
             initialValues={{
                 TextRemarks:'',
