@@ -6,7 +6,7 @@ const FormRank = (props) => {
 
     return(
         CrewMember.CrewRank === 'Custom' ?
-            <Col>
+            <Col md={2}>
                 <InputGroup>
                     <InputGroup.Prepend>
                         <InputGroup.Text>Rank</InputGroup.Text>
@@ -25,7 +25,21 @@ const FormRank = (props) => {
                     </Form.Control.Feedback>
                 </InputGroup>
             </Col>
-            : CrewMember.CrewRank
+            : 
+            <Col md={2}>
+                <InputGroup>
+                    <InputGroup.Prepend>
+                        <InputGroup.Text>Rank</InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <Form.Control
+                        placeholder='Ex: Captain'
+                        name={`CrewList.${index}.CrewRank`}
+                        id={`CrewList.${index}.CrewRank`}
+                        value={CrewMember.CrewRank}
+                        disabled
+                    />
+                </InputGroup>
+            </Col>
     )
 }
 

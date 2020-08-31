@@ -6,7 +6,7 @@ const FormLastAndFirstName = (props) => {
     
     return(
         <>
-            <Col>
+            <Col md ={2}>
                 <InputGroup>
                     <InputGroup.Prepend>
                         <InputGroup.Text>First</InputGroup.Text>
@@ -26,7 +26,7 @@ const FormLastAndFirstName = (props) => {
                     </Form.Control.Feedback>
                 </InputGroup>
             </Col>
-            <Col>
+            <Col md={2}>
                 <InputGroup>
                     <InputGroup.Prepend>
                         <InputGroup.Text>Last</InputGroup.Text>

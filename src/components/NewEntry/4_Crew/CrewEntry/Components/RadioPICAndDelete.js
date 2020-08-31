@@ -6,7 +6,7 @@ const RadioPICAndDelete = (props) => {
 
     return(
         <>
-            <Col md={3}>
+            <Col md={2}>
                 <Form.Check
                     type='radio'
                     name={`PIC`}
@@ -22,7 +22,7 @@ const RadioPICAndDelete = (props) => {
                     {hasErrors(errors, index, 'CrewIsPIC') ? errors.CrewList[index].CrewIsPIC : null}
                 </Form.Control.Feedback>
             </Col>
-            <Col>
+            <Col md={1}>
                 { !isLogbookOwner(index) ? <Button onClick={() => remove(index)}>Delete</Button> : null }
             </Col>
         </>
