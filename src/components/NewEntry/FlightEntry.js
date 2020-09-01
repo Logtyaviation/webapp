@@ -5,11 +5,12 @@ import AicraftInformationsTab from './3_Aircraft/AircraftInformationsTab';
 import CrewInformationsTab from './4_Crew/CrewInformationsTab';
 import TimeAllocationTab from './2_TimeAllocation/TimeAllocationTab';
 import RemarksTab from './5_Remarks/RemarksTab';
+import { Redirect } from 'react-router-dom';
 
 const FlightEntry = () => {
     const [key, setKey] = useState('DepartureAndArrival')
     const [flightEntry, setFlightEntry] = useState({});
-
+    const [redirect, setRedirect] = useState(false)
     const presave = async (values) =>  {
         await setFlightEntry({ ...flightEntry, ...values })
 
@@ -18,9 +19,12 @@ const FlightEntry = () => {
     const save = () => {
         console.log(flightEntry)
         console.log('sending data to server...')
+        setRedirect(true)
     }
 
     return (
+        <>
+        {redirect ? <Redirect to={{pathname:'/ReviewEntry', state:{flightEntry}}}/> : 
             <Container fluid>
                 <Tabs
                 activeKey={key}
@@ -42,6 +46,8 @@ const FlightEntry = () => {
                     </Tab>
                 </Tabs>
             </Container>
+        }
+        </>
     );
 }
 

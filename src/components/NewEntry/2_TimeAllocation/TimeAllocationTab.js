@@ -48,7 +48,7 @@ const TimeAllocationTab = (props) => {
                 props.changeTab('AircraftInformations')
             }}
             initialValues={{
-                TotalBlockTime:'',
+                TotalBlockTime:'K',
                 TotalOrPartNightTime:'',
                 NightTime:'',
                 TotalOrPartIFRTime:'',

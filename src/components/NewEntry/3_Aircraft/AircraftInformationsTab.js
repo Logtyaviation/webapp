@@ -21,8 +21,8 @@ const AircraftInformationsTab = (props) => {
                 props.presave(values)
             }}
             initialValues={{
-                AircraftRegistration:'',
-                AircraftType:'',
+                AircraftRegistration:'L',
+                AircraftType:'M',
                 SEorME:'',
                 SPorMP:'',
             }}

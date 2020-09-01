@@ -7,6 +7,7 @@ import TestComponent from './components/TestComponent';
 import CreateNewProfil from './components/PersonalProfil/CreateNewProfil';
 import RegisterPage from './components/Register/RegisterPage'
 import Homepage from './components/Homepage/Homepage';
+import ReviewEntry from './components/NewEntry/6_Review/ReviewEntry'
 
 
 class Logty extends Component {
@@ -17,6 +18,7 @@ class Logty extends Component {
           <Route exact path='/' component={Homepage}/>
           <Route path='/Table' component={TableLogbook}/>
           <Route path='/NewFlightEntry' component={FlightEntry}/>
+          <Route path='/ReviewEntry' component={ReviewEntry}/>
           <Route path='/TestPage' component={TestComponent}/>
           <Route path='/CreateNewProfil' component={CreateNewProfil}/>
           <Route path='/Register' component={RegisterPage}/>

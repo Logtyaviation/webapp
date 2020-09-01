@@ -18,6 +18,7 @@ const schema = yup.object({
     AmountOfLandings:yup.number().required('Please choose a whole number bigger than 0').integer('Can not be decimal').min(0, 'Can not be negative'),
 })
 
+
 const TakeOffAndLandingTab = (props) => {
     return(
         <Formik
@@ -27,16 +28,16 @@ const TakeOffAndLandingTab = (props) => {
                 props.changeTab('TimeAllocation')
             }}
             initialValues={{
-                DateOfTakeOff:'',
-                TimeOfTakeOff:'',
-                AirportOfTakeOff:'',
+                DateOfTakeOff:'A',
+                TimeOfTakeOff:'B',
+                AirportOfTakeOff:'LEMD',
                 TimeOfDayTakeOff:'',
-                AmountOfTakeOffs:'',
-                DateOfLanding:'',
-                TimeOfLanding:'',
-                AirportOfLanding:'',
+                AmountOfTakeOffs:'1',
+                DateOfLanding:'F',
+                TimeOfLanding:'G',
+                AirportOfLanding:'LEPA',
                 TimeOfDayLanding:'',
-                AmountOfLandings:''
+                AmountOfLandings:'1',
             }}
         >
             {({
@@ -60,7 +61,7 @@ const TakeOffAndLandingTab = (props) => {
                             errors={errors}/>
                         </Col>
                     </Row>
-                    <Button type='submit'>Next: Time allocation</Button>
+                    <Button type='submit' disabled={errors ==! ''}>Next: Time allocation</Button>
                 </Form>
             )}
         </Formik>
