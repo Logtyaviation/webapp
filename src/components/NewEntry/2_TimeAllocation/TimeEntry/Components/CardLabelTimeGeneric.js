@@ -2,9 +2,8 @@ import React from 'react';
 import {Accordion, Card} from 'react-bootstrap'
 import FormLabelTotalOrPartTimeGeneric from './FormLabelTotalOrPartTimeGeneric';
 
-const CardLabelTimeGeneric = (props) => {
-    const { thekey, label, values, errors, handleChange } = props
-    
+const CardLabelTimeGeneric = ({ thekey, label, values, errors, handleChange }) => {
+
     return (
         <Card>
             <Card.Header>
@@ -14,8 +13,8 @@ const CardLabelTimeGeneric = (props) => {
             <Accordion.Collapse eventKey={thekey}>
                 <Card.Body>
                     <FormLabelTotalOrPartTimeGeneric
-                    example1='Ex: 04:38' 
-                    example2='Ex: 02:56' 
+                    example1='Ex: 04:38'
+                    example2='Ex: 02:56'
                     label={label}
                     handleChange={handleChange}
                     values={values}

@@ -1,9 +1,10 @@
-import React from 'react' 
+import React from 'react'
 import { Col, InputGroup, Form } from 'react-bootstrap'
+import { isValid, isInvalid, hasErrors } from './Helper'
 
 const FormLastAndFirstName = (props) => {
-    const { index, CrewMember, isValid, isInvalid, hasErrors, errors, handleChange } = props
-    
+    const { index, CrewMember, errors, handleChange } = props
+
     return(
         <>
             <Col md ={2}>

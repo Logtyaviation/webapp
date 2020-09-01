@@ -12,8 +12,7 @@ const FlightEntry = () => {
     const [flightEntry, setFlightEntry] = useState({});
     const [redirect, setRedirect] = useState(false)
     const presave = async (values) =>  {
-        await setFlightEntry({ ...flightEntry, ...values })
-
+        setFlightEntry({ ...flightEntry, ...values })
     }
 
     const save = () => {
@@ -24,7 +23,7 @@ const FlightEntry = () => {
 
     return (
         <>
-        {redirect ? <Redirect to={{pathname:'/ReviewEntry', state:{flightEntry}}}/> : 
+        {redirect ? <Redirect to={{pathname:'/ReviewEntry', state:{flightEntry}}}/> :
             <Container fluid>
                 <Tabs
                 activeKey={key}

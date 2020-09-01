@@ -3,8 +3,7 @@ import { Row, Col, Container } from 'react-bootstrap';
 import TextArea from './Components/TextArea';
 import RemarksRadio from './Components/RemarksRadio';
 
-const RemarksEntry = (props) => {
-    const { handleChange, values, errors } = props
+const RemarksEntry = ({ handleChange, values, errors }) => {
 
     return (
         <Container fluid>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Form, Col, Row, Button} from 'react-bootstrap';
-import ModalNightTimeCalculator from '../ModalNightTimeCalculator';
+import ModalNightTimeCalculator from './ModalNightTimeCalculator';
 
 class FormLabelTotalOrPartTimeGeneric extends Component {
     constructor(props){
@@ -44,7 +44,7 @@ class FormLabelTotalOrPartTimeGeneric extends Component {
                                     value:values.TotalBlockTime
                                 }
                             })
-                        }}                     
+                        }}
                         />
                     </Col>
                     <Col>
@@ -77,8 +77,8 @@ class FormLabelTotalOrPartTimeGeneric extends Component {
                         />
                         <Form.Control.Feedback type='invalid'>{errors[label+'Time']}</Form.Control.Feedback>
                     </Col>
-                    {label === 'PIC' ? <Form.Check 
-                        type='checkbox' 
+                    {label === 'PIC' ? <Form.Check
+                        type='checkbox'
                         label='PICUS'
                         name='PICUSTime'
                         id='PICUSTime'

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 
-const SingleOrMultiEngineAircraft = (props) => {
-    const { values, errors, handleChange } = props
+const SingleOrMultiEngine = ({ values, errors, handleChange }) => {
 
     return(
         <>
@@ -11,12 +10,12 @@ const SingleOrMultiEngineAircraft = (props) => {
         type='radio'
         label='Single engine'
         name='SEorME'
-        id='SEAircraft'
+        id='SingleEngine'
         onChange={e => {
-            e.target.value = 'SEAircraft'
+            e.target.value = 'SingleEngine'
             handleChange(e)
         }}
-        checked={values.SEorME === 'SEAircraft' ? true:false}
+        checked={values.SEorME === 'SingleEngine'}
         isValid={values.SEorME && !errors.SEorME}
         isInvalid={!!errors.SEorME}
         feedback={errors.SEorME}
@@ -25,12 +24,12 @@ const SingleOrMultiEngineAircraft = (props) => {
         type='radio'
         label='Multi engine'
         name='SEorME'
-        id='MEAircraft'
+        id='MultiEngine'
         onChange={e => {
-            e.target.value = 'MEAircraft'
+            e.target.value = 'MultiEngine'
             handleChange(e)
         }}
-        checked={values.SEorME === 'MEAircraft' ? true:false}
+        checked={values.SEorME === 'MultiEngine'}
         isValid={values.SEorME && !errors.SEorME}
         isInvalid={!!errors.SEorME}
         />
@@ -38,4 +37,4 @@ const SingleOrMultiEngineAircraft = (props) => {
     )
 }
 
-export default SingleOrMultiEngineAircraft
+export default SingleOrMultiEngine

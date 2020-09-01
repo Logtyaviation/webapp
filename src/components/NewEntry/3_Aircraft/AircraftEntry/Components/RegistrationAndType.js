@@ -1,8 +1,7 @@
 import React from 'react';
 import { InputGroup, Col, Row, Form } from 'react-bootstrap';
 
-const RegistrationAndType = (props) => {
-    const { errors, values, handleChange } = props
+const RegistrationAndType = ({ errors, values, handleChange }) => {
 
     return (
         <Row>
@@ -10,17 +9,17 @@ const RegistrationAndType = (props) => {
                 <InputGroup>
                     <InputGroup.Prepend>
                         <InputGroup.Text>Registration</InputGroup.Text>
-                    </InputGroup.Prepend> 
+                    </InputGroup.Prepend>
                     <Form.Control
                     placeholder='Ex: EI-DAC'
-                    name='AircraftRegistration'
-                    id='AircraftRegistration'
+                    name='Registration'
+                    id='Registration'
                     onChange={handleChange}
-                    value={values.AircraftRegistration}
-                    isValid={values.AircraftRegistration && !errors.AircraftRegistration}
-                    isInvalid={!!errors.AircraftRegistration}
+                    value={values.Registration}
+                    isValid={values.Registration && !errors.Registration}
+                    isInvalid={!!errors.Registration}
                     />
-                    <Form.Control.Feedback type='invalid'>{errors.AircraftRegistration}</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid'>{errors.Registration}</Form.Control.Feedback>
                 </InputGroup>
             </Col>
             <Col>
@@ -30,14 +29,14 @@ const RegistrationAndType = (props) => {
                     </InputGroup.Prepend>
                     <Form.Control
                     placeholder='Ex: B737-800'
-                    name='AircraftType'
-                    id='AircraftType'
+                    name='Type'
+                    id='Type'
                     onChange={handleChange}
-                    value={values.AircraftType}
-                    isValid={values.AircraftType && !errors.AircraftType}
-                    isInvalid={!!errors.AircraftType}
+                    value={values.Type}
+                    isValid={values.Type && !errors.Type}
+                    isInvalid={!!errors.Type}
                     />
-                    <Form.Control.Feedback type='invalid'>{errors.AircraftType}</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid'>{errors.Type}</Form.Control.Feedback>
                 </InputGroup>
             </Col>
         </Row>

@@ -1,9 +1,8 @@
 import React from 'react'
 import { Form } from 'react-bootstrap'
 
-const SingleOrMultiPilotAircraft = (props) => {
-    const { values, errors, handleChange } = props
-    
+const SingleOrMultiPilot = ({ values, errors, handleChange }) => {
+
     return(
         <>
         Single or multi pilot
@@ -11,12 +10,12 @@ const SingleOrMultiPilotAircraft = (props) => {
         type='radio'
         label='Single pilot'
         name='SPorMP'
-        id='SPAircraft'
+        id='SinglePilot'
         onChange={e => {
-            e.target.value = 'SPAircraft'
+            e.target.value = 'SinglePilot'
             handleChange(e)
         }}
-        checked={values.SPorMP === 'SPAircraft' ? true:false}
+        checked={values.SPorMP === 'SinglePilot'}
         isValid={values.SPorMP && !errors.SPorMP}
         isInvalid={!!errors.SPorMP}
         feedback={errors.SPorMP}
@@ -25,12 +24,12 @@ const SingleOrMultiPilotAircraft = (props) => {
         type='radio'
         label='Multi pilot'
         name='SPorMP'
-        id='MPAircraft'
+        id='MultiPilot'
         onChange={e => {
-            e.target.value = 'MPAircraft'
+            e.target.value = 'MultiPilot'
             handleChange(e)
         }}
-        checked={values.SPorMP === 'MPAircraft' ? true:false}
+        checked={values.SPorMP === 'MultiPilot'}
         isValid={values.SPorMP && !errors.SPorMP}
         isInvalid={!!errors.SPorMP}
         />
@@ -38,4 +37,4 @@ const SingleOrMultiPilotAircraft = (props) => {
     )
 }
 
-export default SingleOrMultiPilotAircraft
+export default SingleOrMultiPilot

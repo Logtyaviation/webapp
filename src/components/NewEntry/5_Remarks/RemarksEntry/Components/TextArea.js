@@ -1,18 +1,17 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 
-const TextArea = (props) => {
-    const { handleChange, values, errors } = props
+const TextArea = ({ handleChange, values, errors }) => {
 
     return (
         <>
-            <Form.Control 
-            as='textarea' 
+            <Form.Control
+            as='textarea'
             placeholder='Ex :
             - ILS CAT III performed.
             - Annual Line check performed by Chesley Sullenberg.
             - Go around due to ATC.
-            - ...' 
+            - ...'
             rows='5'
             name='TextRemarks'
             id='TextRemarks'

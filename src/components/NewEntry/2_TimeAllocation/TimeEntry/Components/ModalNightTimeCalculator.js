@@ -1,13 +1,12 @@
 import React from 'react';
 import { Modal, Button, FormControl, Col, Row } from 'react-bootstrap';
 
-const ModalNightTimeCalculator = (props) => {
-    const { timeOfTheDay, setShow, handleClose } = props
+const ModalNightTimeCalculator = ({ timeOfTheDay, setShow, handleClose }) => {
 
     return (
         <>
-            <Modal 
-            show={setShow} 
+            <Modal
+            show={setShow}
             onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Night time calculator</Modal.Title>
@@ -17,14 +16,14 @@ const ModalNightTimeCalculator = (props) => {
                         <Col>
                             {timeOfTheDay === 'day' ? 'Sunset time':null}
                             {timeOfTheDay === 'night' ? 'Sunrise time':null}
-                            <FormControl 
+                            <FormControl
                             placeholder='Ex: 19:48'
                             />
                         </Col>
                         <Col>
                             Equivalent night time
-                            <FormControl 
-                            placeholder='01:35' 
+                            <FormControl
+                            placeholder='01:35'
                             disabled/>
                         </Col>
                     </Row>

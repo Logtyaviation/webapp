@@ -1,16 +1,15 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import Header from './Components/Header';
-import AddCrew from './Components/AddCrew';
+import FieldArrayCrew from './Components/FieldArrayCrew';
 
-const CrewEntry = (props) => {
-    const { values, errors, handleChange } = props
+const CrewEntry = ({ values, errors, handleChange }) => {
 
     return (
         <Container fluid>
             Crewing informations
             <Header/>
-            <AddCrew
+            <FieldArrayCrew
             handleChange={handleChange}
             values={values}
             errors={errors}

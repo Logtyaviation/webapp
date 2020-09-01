@@ -1,12 +1,11 @@
 import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import RegistrationAndType from './Components/RegistrationAndType';
-import SingleOrMultiEngineAircraft from './Components/SingleOrMultiEngineAircraft';
-import SingleOrMultiPilotAircraft from './Components/SingleOrMultiPilotAircraft';
+import SingleOrMultiEngine from './Components/SingleOrMultiEngine';
+import SingleOrMultiPilot from './Components/SingleOrMultiPilot';
 
-const AircraftEntry = (props) => {
-    const { values, errors, handleChange } = props
-    
+const AircraftEntry = ({ values, errors, handleChange }) => {
+
         return (
             <Container fluid>
             Aircraft informations
@@ -21,14 +20,14 @@ const AircraftEntry = (props) => {
                     <Col>
                         <Row>
                             <Col md={4}>
-                                <SingleOrMultiEngineAircraft
+                                <SingleOrMultiEngine
                                 handleChange={handleChange}
                                 values={values}
                                 errors={errors}
                                 />
                             </Col>
                             <Col>
-                                <SingleOrMultiPilotAircraft
+                                <SingleOrMultiPilot
                                 handleChange={handleChange}
                                 values={values}
                                 errors={errors}

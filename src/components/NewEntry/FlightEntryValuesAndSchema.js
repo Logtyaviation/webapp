@@ -13,16 +13,16 @@ const TakeOffAndLandingSchema = yup.object({
     LandingsAmount:yup.number().required('Please choose a whole number bigger than 0').integer('Can not be decimal').min(0, 'Can not be negative'),
 })
 
-const TakeOffAndLandingInitialValues = {    
+const TakeOffAndLandingInitialValues = {
     TakeOffDate:'A',
     TakeOffTime:'B',
     TakeOffAirport:'LEMD',
-    TakeOffDayOrNight:'',
+    TakeOffDayOrNight:'TakeOffByDay',
     TakeOffsAmount:'1',
     LandingDate:'F',
     LandingTime:'G',
     LandingAirport:'LEPA',
-    LandingDayOrNight:'',
+    LandingDayOrNight:'LandingByNight',
     LandingsAmount:'1'
 }
 
@@ -80,17 +80,17 @@ const TimeAllocationInitialValues = {
 
 
 const AircraftInformationSchema = yup.object({
-    AircraftRegistration:yup.string().required('Aircraft registration is required'),
-    AircraftType:yup.string().required('Aircraft type is required'),
+    Registration:yup.string().required('Aircraft registration is required'),
+    Type:yup.string().required('Aircraft type is required'),
     SEorME:yup.string().required('Please choose single or multi engine'),
     SPorMP:yup.string().required('Please choose single or multi pilot'),
 })
 
 const AircraftInformationInitialValues = {
-    AircraftRegistration:'L',
-    AircraftType:'M',
-    SEorME:'',
-    SPorMP:'',
+    Registration:'L',
+    Type:'M',
+    SEorME:'SingleEngine',
+    SPorMP:'SinglePilot',
 }
 
 
@@ -99,12 +99,12 @@ const CrewInformationSchema = yup.object({
         FirstName: yup.string().required('Please enter the first name'),
         LastName: yup.string().required('Please enter the last name'),
         Rank: yup.string().required(),
-        CustomRank: yup.string().when('CrewRank', {
+        CustomRank: yup.string().when('Rank', {
             is: 'Custom',
             then: yup.string().required('Please enter the rank')
         })
     }).required()),
-    PIC: yup.string().required()
+    PIC: yup.string().required('Please select one pilot in command')
 })
 
 const CrewInformationInitialValues = {
@@ -132,14 +132,14 @@ const RemarksInitialValues = {
 
 
 export {
-    TakeOffAndLandingSchema, 
-    TimeAllocationSchema, 
+    TakeOffAndLandingSchema,
+    TimeAllocationSchema,
     AircraftInformationSchema,
     CrewInformationSchema,
     RemarksSchema,
-    TakeOffAndLandingInitialValues, 
+    TakeOffAndLandingInitialValues,
     TimeAllocationInitialValues,
     AircraftInformationInitialValues,
     CrewInformationInitialValues,
     RemarksInitialValues
-} 
+}

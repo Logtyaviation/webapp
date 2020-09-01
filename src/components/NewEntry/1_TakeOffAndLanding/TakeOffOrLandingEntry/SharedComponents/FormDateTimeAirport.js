@@ -1,8 +1,8 @@
 import React from 'react';
 import {InputGroup, Form} from 'react-bootstrap'
 
-const FormDateTimeAirport = (props) => {
-    const { name, values, errors, handleChange} = props
+const FormDateTimeAirport = ({ name, values, errors, handleChange }) => {
+
     return (
         <>
         <InputGroup>

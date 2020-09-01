@@ -1,8 +1,8 @@
 import React from 'react';
 import {InputGroup, FormControl, Form } from 'react-bootstrap'
 
-const FormTotalBlockTime = (props) => {
-    const { label, example, values, errors, handleChange } = props
+const FormTotalBlockTime = ({ label, example, values, errors, handleChange }) => {
+
     return (
         <InputGroup>
             <InputGroup.Prepend>

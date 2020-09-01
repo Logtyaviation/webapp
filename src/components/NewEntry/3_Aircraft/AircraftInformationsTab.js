@@ -10,8 +10,8 @@ const AircraftInformationsTab = (props) => {
         <Formik
             validationSchema={AircraftInformationSchema}
             onSubmit={values => {
-                props.changeTab('CrewInformations')
                 props.presave(values)
+                props.changeTab('CrewInformations')
             }}
             initialValues={AircraftInformationInitialValues}
         >

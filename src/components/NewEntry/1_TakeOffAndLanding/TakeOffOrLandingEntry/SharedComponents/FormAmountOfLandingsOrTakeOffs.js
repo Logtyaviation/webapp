@@ -1,8 +1,7 @@
 import React  from 'react';
 import {Form} from 'react-bootstrap'
 
-const FormLandingsOrTakeOffsAmount = (props) => {
-    const { name, values, errors, handleChange } = props
+const FormLandingsOrTakeOffsAmount = ({ name, values, errors, handleChange }) => {
 
     return (
         <>

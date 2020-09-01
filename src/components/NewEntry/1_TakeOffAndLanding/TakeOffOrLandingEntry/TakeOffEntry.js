@@ -4,8 +4,7 @@ import FormDateTimeAirport from './SharedComponents/FormDateTimeAirport'
 import RadioTimeOfDay from './SharedComponents/RadioTimeOfDay'
 import FormLandingsOrTakeOffsAmount from './SharedComponents/FormAmountOfLandingsOrTakeOffs'
 
-const TakeOffEntry = (props) => {
-    const { values, errors, handleChange } = props
+const TakeOffEntry = ({ values, errors, handleChange } ) => {
 
     return (
         <Container>

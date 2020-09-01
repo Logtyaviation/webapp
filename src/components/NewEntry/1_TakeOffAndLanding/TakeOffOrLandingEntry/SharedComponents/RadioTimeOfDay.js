@@ -1,8 +1,7 @@
 import React  from 'react';
 import {Form} from 'react-bootstrap'
 
-const RadioTimeOfDay = (props) => {
-    const { name, values, errors, handleChange } = props
+const RadioTimeOfDay = ({ name, values, errors, handleChange } ) => {
 
     return (
         <>
