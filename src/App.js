@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Homepage from './components/Homepage';
 import TableLogbook from './components/Table/Table';
 import FlightEntry from './components/NewEntry/FlightEntry';
 import TestComponent from './components/TestComponent';
 import CreateNewProfil from './components/PersonalProfil/CreateNewProfil';
 import RegisterPage from './components/Register/RegisterPage'
+import Homepage from './components/Homepage/Homepage';
 
 
 class Logty extends Component {
