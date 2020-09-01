@@ -11,13 +11,13 @@ const FormDateTimeAirport = (props) => {
             </InputGroup.Prepend>
             <Form.Control
             placeholder='Ex: 05/12/2011'
-            name={`DateOf${name}`}
-            id={`DateOf${name}`}
+            name={`${name}Date`}
+            id={`${name}Date`}
             onChange={handleChange}
-            value={values[`DateOf${name}`]}
-            isValid={values[`DateOf${name}`] && !errors[`DateOf${name}`]}
-            isInvalid={!!errors[`DateOf${name}`]}/>
-            <Form.Control.Feedback type='invalid'>{errors[`DateOf${name}`]}</Form.Control.Feedback>
+            value={values[`${name}Date`]}
+            isValid={values[`${name}Date`] && !errors[`${name}Date`]}
+            isInvalid={!!errors[`${name}Date`]}/>
+            <Form.Control.Feedback type='invalid'>{errors[`${name}Date`]}</Form.Control.Feedback>
         </InputGroup>
         <InputGroup>
             <InputGroup.Prepend>
@@ -25,13 +25,13 @@ const FormDateTimeAirport = (props) => {
             </InputGroup.Prepend>
             <Form.Control
             placeholder='Ex: 13:18'
-            name={`TimeOf${name}`}
-            id={`TimeOf${name}`}
+            name={`${name}Time`}
+            id={`${name}Time`}
             onChange={handleChange}
-            value={values[`TimeOf${name}`]}
-            isValid={values[`TimeOf${name}`] && !errors[`TimeOf${name}`]}
-            isInvalid={!!errors[`TimeOf${name}`]}/>
-            <Form.Control.Feedback type='invalid'>{errors[`TimeOf${name}`]}</Form.Control.Feedback>
+            value={values[`${name}Time`]}
+            isValid={values[`${name}Time`] && !errors[`${name}Time`]}
+            isInvalid={!!errors[`${name}Time`]}/>
+            <Form.Control.Feedback type='invalid'>{errors[`${name}Time`]}</Form.Control.Feedback>
         </InputGroup>
         <InputGroup>
             <InputGroup.Prepend>
@@ -39,13 +39,13 @@ const FormDateTimeAirport = (props) => {
             </InputGroup.Prepend>
             <Form.Control
             placeholder='Ex: GCTS'
-            name={`AirportOf${name}`}
-            id={`AirportOf${name}`}
+            name={`${name}Airport`}
+            id={`${name}Airport`}
             onChange={handleChange}
-            value={values[`AirportOf${name}`]}
-            isValid={values[`AirportOf${name}`] && !errors[`AirportOf${name}`]}
-            isInvalid={!!errors[`AirportOf${name}`]}/>
-            <Form.Control.Feedback type='invalid'>{errors[`AirportOf${name}`]}</Form.Control.Feedback>
+            value={values[`${name}Airport`]}
+            isValid={values[`${name}Airport`] && !errors[`${name}Airport`]}
+            isInvalid={!!errors[`${name}Airport`]}/>
+            <Form.Control.Feedback type='invalid'>{errors[`${name}Airport`]}</Form.Control.Feedback>
         </InputGroup>
         </>
     );

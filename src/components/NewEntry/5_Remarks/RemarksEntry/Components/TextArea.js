@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Form } from 'react-bootstrap';
 
 const TextArea = (props) => {
-    const { handleChange, values } = props
+    const { handleChange, values, errors } = props
 
     return (
         <>
@@ -18,7 +18,9 @@ const TextArea = (props) => {
             id='TextRemarks'
             onChange={handleChange}
             value={values.TextRemarks}
+            isInvalid={!!errors.TextRemarks}
             />
+            <Form.Control.Feedback type='invalid'>{errors.TextRemarks}</Form.Control.Feedback>
         </>
     );
 }

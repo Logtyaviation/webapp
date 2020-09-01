@@ -10,27 +10,27 @@ const RadioTimeOfDay = (props) => {
         <Form.Check
         type='radio'
         label='Day'
-        name={`TimeOfDay${name}`}
+        name={`${name}DayOrNight`}
         onChange={e => {
             e.target.value = `${name}ByDay`
             handleChange(e)
         }}
-        checked={values[`TimeOfDay${name}`] === `${name}ByDay`}
-        isValid={values[`TimeOfDay${name}`] && !errors[`TimeOfDay${name}`]}
-        isInvalid={!!errors[`TimeOfDay${name}`]}
-        feedback={errors[`TimeOfDay${name}`]}
+        checked={values[`${name}DayOrNight`] === `${name}ByDay`}
+        isValid={values[`${name}DayOrNight`] && !errors[`${name}DayOrNight`]}
+        isInvalid={!!errors[`${name}DayOrNight`]}
+        feedback={errors[`${name}DayOrNight`]}
         />
         <Form.Check
         type='radio'
         label='Night'
-        name={`TimeOfDay${name}`}
+        name={`${name}DayOrNight`}
         onChange={e => {
             e.target.value = `${name}ByNight`
             handleChange(e)
         }}
-        checked={values[`TimeOfDay${name}`] === `${name}ByNight`}
-        isValid={values[`TimeOfDay${name}`] && !errors[`TimeOfDay${name}`]}
-        isInvalid={!!errors[`TimeOfDay${name}`]}
+        checked={values[`${name}DayOrNight`] === `${name}ByNight`}
+        isValid={values[`${name}DayOrNight`] && !errors[`${name}DayOrNight`]}
+        isInvalid={!!errors[`${name}DayOrNight`]}
         />
         </>
     );

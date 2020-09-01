@@ -1,31 +1,19 @@
 import React from 'react';
 import { Row, Col, Button, Form} from 'react-bootstrap'
 import { Formik } from 'formik'
-import  * as yup from 'yup'
 import AircraftEntry from './AircraftEntry/AircraftEntry';
+import { AircraftInformationInitialValues, AircraftInformationSchema } from '../FlightEntryValuesAndSchema';
 
 const AircraftInformationsTab = (props) => {
 
-    const schema = yup.object({
-        AircraftRegistration:yup.string().required('Aircraft registration is required'),
-        AircraftType:yup.string().required('Aircraft type is required'),
-        SEorME:yup.string().required('Please choose single or multi engine'),
-        SPorMP:yup.string().required('Please choose single or multi pilot'),
-    })
-
     return(
         <Formik
-            validationSchema={schema}
+            validationSchema={AircraftInformationSchema}
             onSubmit={values => {
                 props.changeTab('CrewInformations')
                 props.presave(values)
             }}
-            initialValues={{
-                AircraftRegistration:'L',
-                AircraftType:'M',
-                SEorME:'',
-                SPorMP:'',
-            }}
+            initialValues={AircraftInformationInitialValues}
         >
             {({
                 handleSubmit,

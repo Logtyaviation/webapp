@@ -14,12 +14,12 @@ const RadioPICAndDelete = (props) => {
                     value={values.PIC}
                     isInvalid={!hasPIC(values.PIC)}
                     onChange={(e) => {
-                        e.target.value = `${CrewMember.CrewFirstName} ${CrewMember.CrewLastName}`;
+                        e.target.value = `${CrewMember.FirstName} ${CrewMember.LastName}`;
                         handleChange(e);
                     }}
                 />
                 <Form.Control.Feedback type='invalid'>
-                    {hasErrors(errors, index, 'CrewIsPIC') ? errors.CrewList[index].CrewIsPIC : null}
+                    {hasErrors(errors, index, 'CrewIsPIC') ? errors.Crew[index].CrewIsPIC : null}
                 </Form.Control.Feedback>
             </Col>
             <Col md={1}>

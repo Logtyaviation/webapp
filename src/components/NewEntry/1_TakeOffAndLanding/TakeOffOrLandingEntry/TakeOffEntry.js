@@ -1,41 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Col, Row, Container} from 'react-bootstrap'
 import FormDateTimeAirport from './SharedComponents/FormDateTimeAirport'
 import RadioTimeOfDay from './SharedComponents/RadioTimeOfDay'
-import FormAmountOfLandingsOrTakeOffs from './SharedComponents/FormAmountOfLandingsOrTakeOffs'
+import FormLandingsOrTakeOffsAmount from './SharedComponents/FormAmountOfLandingsOrTakeOffs'
 
-class TakeOffEntry extends Component {
+const TakeOffEntry = (props) => {
+    const { values, errors, handleChange } = props
 
-    render() {
-        return (
-            <Container>
-                Departure informations
-                <Row>
-                    <Col md={5}>
-                        <FormDateTimeAirport
-                            name='TakeOff'
-                            handleChange={this.props.handleChange}
-                            values={this.props.values}
-                            errors={this.props.errors}/>
-                    </Col>
-                    <Col m={3}>
-                        <RadioTimeOfDay
-                            name='TakeOff'
-                            handleChange={this.props.handleChange}
-                            values={this.props.values}
-                            errors={this.props.errors}/>
-                    </Col>
-                    <Col md={4}>
-                        <FormAmountOfLandingsOrTakeOffs
-                            name='TakeOffs'
-                            handleChange={this.props.handleChange}
-                            values={this.props.values}
-                            errors={this.props.errors}/>
-                    </Col>
-                </Row>
-            </Container>
-        );
-    }
+    return (
+        <Container>
+            Departure informations
+            <Row>
+                <Col md={5}>
+                    <FormDateTimeAirport
+                        name='TakeOff'
+                        handleChange={handleChange}
+                        values={values}
+                        errors={errors}/>
+                </Col>
+                <Col m={3}>
+                    <RadioTimeOfDay
+                        name='TakeOff'
+                        handleChange={handleChange}
+                        values={values}
+                        errors={errors}/>
+                </Col>
+                <Col md={4}>
+                    <FormLandingsOrTakeOffsAmount
+                        name='TakeOffs'
+                        handleChange={handleChange}
+                        values={values}
+                        errors={errors}/>
+                </Col>
+            </Row>
+        </Container>
+    );
 }
 
 export default TakeOffEntry;

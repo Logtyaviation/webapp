@@ -1,30 +1,19 @@
 import React from 'react';
 import { Row, Col, Button, Form} from 'react-bootstrap'
 import { Formik } from 'formik'
-import  * as yup from 'yup'
 import RemarkEntry from './RemarksEntry/RemarksEntry';
+import { RemarksInitialValues, RemarksSchema } from '../FlightEntryValuesAndSchema';
 
 const RemarksTab = (props) => {
 
-    const schema = yup.object({
-
-    })
-
     return(
         <Formik
-            validationSchema={schema}
+            validationSchema={RemarksSchema}
             onSubmit={async (values) => {
                 await props.presave(values)
                 props.save()
             }}
-            initialValues={{
-                TextRemarks:'',
-                RemarkLineCheck:'',
-                RemarkAutoland:'',
-                RemarkMonitoredApproach:'',
-                RemarkGoAround:'',
-                RemarkDiversion:'',
-            }}
+            initialValues={RemarksInitialValues}
         >
             {({
                 handleSubmit,

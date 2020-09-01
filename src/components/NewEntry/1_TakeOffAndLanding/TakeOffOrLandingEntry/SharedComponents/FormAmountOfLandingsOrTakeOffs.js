@@ -1,24 +1,24 @@
 import React  from 'react';
 import {Form} from 'react-bootstrap'
 
-const FormAmountOfLandingsOrTakeOffs = (props) => {
+const FormLandingsOrTakeOffsAmount = (props) => {
     const { name, values, errors, handleChange } = props
 
     return (
         <>
             { name === 'Landings' ? 'Landing(s)' : 'Take off(s)' } performed
             <Form.Control
-            id={`AmountOf${name}`}
-            name={`AmountOf${name}`}
+            id={`${name}Amount`}
+            name={`${name}Amount`}
             placeholder='Ex: 1'
             onChange={handleChange}
-            value={values[`AmountOf${name}`]}
-            isValid={values[`AmountOf${name}`] && !errors[`AmountOf${name}`]}
-            isInvalid={!!errors[`AmountOf${name}`]}
+            value={values[`${name}Amount`]}
+            isValid={values[`${name}Amount`] && !errors[`${name}Amount`]}
+            isInvalid={!!errors[`${name}Amount`]}
             />
-            <Form.Control.Feedback type='invalid'>{errors[`AmountOf${name}`]}</Form.Control.Feedback>
+            <Form.Control.Feedback type='invalid'>{errors[`${name}Amount`]}</Form.Control.Feedback>
         </>
     );
 }
 
-export default FormAmountOfLandingsOrTakeOffs;
+export default FormLandingsOrTakeOffsAmount;

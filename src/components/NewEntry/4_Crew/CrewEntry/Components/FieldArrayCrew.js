@@ -22,22 +22,22 @@ const AddCol = (index) => {
 }
 
     return(
-        <FieldArray name='CrewList'>
+        <FieldArray name='Crew'>
             {({ push, remove }) => (
                 <Row>
                     <Col md={2}>
                         <DropdownButton
                             drop='right'
                             title='Add crew member'
-                            onSelect={(eventKey) => push({CustomRank:'', CrewRank:eventKey, CrewFirstName:'', CrewLastName:''})}
+                            onSelect={(eventKey) => push({CustomRank:'', Rank:eventKey, FirstName:'', LastName:''})}
                             >
                             <Dropdown.Item eventKey='Captain'>Captain</Dropdown.Item>
                             <Dropdown.Item eventKey='First Officer'>First Officer</Dropdown.Item>
                             <Dropdown.Item eventKey='Custom'>Custom</Dropdown.Item>
                         </DropdownButton>
                     </Col>
-                {values.CrewList.length > 0 &&
-                    values.CrewList.map((CrewMember, index) => 
+                {values.Crew.length > 0 &&
+                    values.Crew.map((CrewMember, index) => 
                         <>
                         {AddCol(index)}
                         <FormRank 

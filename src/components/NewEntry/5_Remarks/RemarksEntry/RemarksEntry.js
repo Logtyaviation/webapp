@@ -4,7 +4,7 @@ import TextArea from './Components/TextArea';
 import RemarksRadio from './Components/RemarksRadio';
 
 const RemarksEntry = (props) => {
-    const { handleChange, values } = props
+    const { handleChange, values, errors } = props
 
     return (
         <Container fluid>
@@ -13,7 +13,8 @@ const RemarksEntry = (props) => {
             <Col>
                 <TextArea
                 handleChange={handleChange}
-                values={values}/>
+                values={values}
+                errors={errors}/>
             </Col>
             <Col md={2}>
                 <RemarksRadio

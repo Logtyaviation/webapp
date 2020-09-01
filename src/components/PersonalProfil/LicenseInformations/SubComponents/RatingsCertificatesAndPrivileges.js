@@ -4,7 +4,7 @@ import { FieldArray, ErrorMessage } from 'formik'
 
 class RatingsCertificatesAndPrivileges extends Component {
     render() {
-        const {values, errors, handleChange} = this.props
+        const {values, handleChange} = this.props
         return (
             <>
             <div>Ratings, certificates and privileges</div>

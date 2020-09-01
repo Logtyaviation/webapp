@@ -6,8 +6,8 @@ const isLogbookOwner = (index) => index === 0;
 const hasValue = (object, key) => object !== undefined && object[key] !== undefined && object[key].length > 0;
 
 const hasErrors = (errors, index, key) => {
-    if (errors.CrewList !== undefined && errors.CrewList[index] !== undefined) {
-        return errors.CrewList[index][key];
+    if (errors.Crew !== undefined && errors.Crew[index] !== undefined) {
+        return errors.Crew[index][key];
     }
     return false;
 };
