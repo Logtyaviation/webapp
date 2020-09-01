@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import TableLogbook from './components/Table/Table';
+import TableLogbook from './components/Logbook/TableLogbook/TableLogbook';
 import FlightEntry from './components/NewEntry/FlightEntry';
 import TestComponent from './components/TestComponent';
 import CreateNewProfil from './components/PersonalProfil/CreateNewProfil';

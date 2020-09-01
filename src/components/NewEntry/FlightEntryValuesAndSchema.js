@@ -14,13 +14,13 @@ const TakeOffAndLandingSchema = yup.object({
 })
 
 const TakeOffAndLandingInitialValues = {
-    TakeOffDate:'A',
-    TakeOffTime:'B',
+    TakeOffDate:'01/09/2020',
+    TakeOffTime:'19:35',
     TakeOffAirport:'LEMD',
     TakeOffDayOrNight:'TakeOffByDay',
     TakeOffsAmount:'1',
-    LandingDate:'F',
-    LandingTime:'G',
+    LandingDate:'01/09/2020',
+    LandingTime:'20:50',
     LandingAirport:'LEPA',
     LandingDayOrNight:'LandingByNight',
     LandingsAmount:'1'
@@ -62,7 +62,7 @@ const TimeAllocationSchema = yup.object({
 })
 
 const TimeAllocationInitialValues = {
-    TotalBlockTime:'K',
+    TotalBlockTime:'01:15',
     TotalOrPartNightTime:'',
     NightTime:'',
     TotalOrPartIFRTime:'',
@@ -87,8 +87,8 @@ const AircraftInformationSchema = yup.object({
 })
 
 const AircraftInformationInitialValues = {
-    Registration:'L',
-    Type:'M',
+    Registration:'EI-FTG',
+    Type:'B737-800',
     SEorME:'SingleEngine',
     SPorMP:'SinglePilot',
 }

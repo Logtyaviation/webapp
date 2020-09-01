@@ -1,4 +1,4 @@
-import React, from 'react';
+import React from 'react';
 import { Row, Accordion, Col, Container} from 'react-bootstrap';
 import FormTotalBlockTime from './Components/FormTotalBlockTime';
 import CardLabelTimeGeneric from './Components/CardLabelTimeGeneric';
