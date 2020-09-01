@@ -114,7 +114,7 @@ const CrewInformationInitialValues = {
         Rank: 'Captain',
         CustomRank:''
     }],
-    PIC: ''
+    PIC: 'Elon Musk'
 }
 
 const RemarksSchema = yup.object({
