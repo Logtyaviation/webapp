@@ -89,7 +89,7 @@ const AircraftInformationSchema = yup.object({
 const AircraftInformationInitialValues = {
     Registration:'EI-FTG',
     Type:'B737-800',
-    SEorME:'SingleEngine',
+    SEorME:'SE',
     SPorMP:'SinglePilot',
 }
 

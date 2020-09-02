@@ -7,7 +7,7 @@ import TestComponent from './components/TestComponent';
 import CreateNewProfil from './components/PersonalProfil/CreateNewProfil';
 import RegisterPage from './components/Register/RegisterPage'
 import Homepage from './components/Homepage/Homepage';
-import ReviewEntry from './components/NewEntry/6_Review/ReviewEntry'
+import ReviewEntry from './components/ReviewEntry/ReviewEntry'
 
 
 class Logty extends Component {

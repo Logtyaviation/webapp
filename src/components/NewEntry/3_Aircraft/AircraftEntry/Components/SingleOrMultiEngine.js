@@ -10,12 +10,12 @@ const SingleOrMultiEngine = ({ values, errors, handleChange }) => {
         type='radio'
         label='Single engine'
         name='SEorME'
-        id='SingleEngine'
+        id='SE'
         onChange={e => {
-            e.target.value = 'SingleEngine'
+            e.target.value = 'SE'
             handleChange(e)
         }}
-        checked={values.SEorME === 'SingleEngine'}
+        checked={values.SEorME === 'SE'}
         isValid={values.SEorME && !errors.SEorME}
         isInvalid={!!errors.SEorME}
         feedback={errors.SEorME}
@@ -24,12 +24,12 @@ const SingleOrMultiEngine = ({ values, errors, handleChange }) => {
         type='radio'
         label='Multi engine'
         name='SEorME'
-        id='MultiEngine'
+        id='ME'
         onChange={e => {
-            e.target.value = 'MultiEngine'
+            e.target.value = 'ME'
             handleChange(e)
         }}
-        checked={values.SEorME === 'MultiEngine'}
+        checked={values.SEorME === 'ME'}
         isValid={values.SEorME && !errors.SEorME}
         isInvalid={!!errors.SEorME}
         />

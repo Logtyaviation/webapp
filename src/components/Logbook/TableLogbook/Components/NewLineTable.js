@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
+import '../TableLogbook.css'
+import { Button } from 'react-bootstrap'
 
 class NewLineTable extends Component{
-
+    
     render(){
             const array=[]
             for (let j=0;j<this.props.p;j++){
@@ -12,33 +14,31 @@ class NewLineTable extends Component{
 
     NewLineTableFunction(){
         return(
-            <tbody>
-                <tr>
-                    <td>{this.props.TakeOffDate}</td>
-                    <td>{this.props.TakeOffTime}</td>
-                    <td>{this.props.TakeOffAirport}</td>
-                    <td>{this.props.LandingDate}</td>
-                    <td>{this.props.LandingTime}</td>
-                    <td>{this.props.LandingAirport}</td>
-                    <td>{this.props.PIC}</td>
-                    <td>{this.props.Type}</td>
-                    <td>{this.props.Registration}</td>
-                    <td>{this.props.SinglePilot}</td>
-                    <td>{this.props.MultiPilot}</td>
-                    <td>{this.props.TakeOffByDay}</td>
-                    <td>{this.props.TakeOffByNight}</td>
-                    <td>{this.props.LandingByDay}</td>
-                    <td>{this.props.LandingByNight}</td>
-                    <td>{this.props.IFRTime}</td>
-                    <td>{this.props.NightTime}</td>
-                    <td>{this.props.PICTime}</td>
-                    <td>{this.props.CopilotTime}</td>
-                    <td>{this.props.DualTime}</td>
-                    <td>{this.props.InstructorTime}</td>
-                    <td>{this.props.TotalBlockTime}</td>
-                    <td>{this.props.Remarks}</td>
-                </tr>
-            </tbody>
+            <tr>
+                <td>{this.props.data.TakeOffDate}</td>
+                <td>{this.props.data.TakeOffTime}</td>
+                <td>{this.props.data.TakeOffAirport}</td>
+                <td>{this.props.data.LandingDate}</td>
+                <td>{this.props.data.LandingTime}</td>
+                <td>{this.props.data.LandingAirport}</td>
+                <td>{this.props.data.PIC}</td>
+                <td className='nobreak'>{this.props.data.Type}</td>
+                <td className='nobreak'>{this.props.data.Registration}</td>
+                <td>{this.props.data.SPorMP === 'SinglePilot' ? this.props.data.SEorME:null}</td>
+                <td>{this.props.data.SPorMP === 'MultiPilot' ? this.props.data.SEorME:null}</td>
+                <td>{this.props.data.TakeOffDayOrNight === 'TakeOffByDay' ? this.props.data.TakeOffsAmount:null}</td>
+                <td>{this.props.data.TakeOffDayOrNight === 'TakeOffByNight' ? this.props.data.TakeOffsAmount:null}</td>
+                <td>{this.props.data.LandingDayOrNight === 'LandingByDay' ? this.props.data.LandingsAmount:null}</td>
+                <td>{this.props.data.LandingDayOrNight === 'LandingByNight' ? this.props.data.LandingsAmount:null}</td>
+                <td>{this.props.data.IFRTime}</td>
+                <td>{this.props.data.NightTime}</td>
+                <td>{this.props.data.PICTime}</td>
+                <td>{this.props.data.CopilotTime}</td>
+                <td>{this.props.data.DualTime}</td>
+                <td>{this.props.data.InstructorTime}</td>
+                <td>{this.props.data.TotalBlockTime}</td>
+                <td><Button variant='outline-light' size='sm'>Show</Button></td>
+            </tr>
         )
     }
     

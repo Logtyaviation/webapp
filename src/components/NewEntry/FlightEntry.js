@@ -7,7 +7,7 @@ import TimeAllocationTab from './2_TimeAllocation/TimeAllocationTab';
 import RemarksTab from './5_Remarks/RemarksTab';
 import { Redirect } from 'react-router-dom';
 
-const FlightEntry = () => {
+const FlightEntry = (props) => {
     const [key, setKey] = useState('DepartureAndArrival')
     const [flightEntry, setFlightEntry] = useState({});
     const [redirect, setRedirect] = useState(false)
@@ -21,9 +21,18 @@ const FlightEntry = () => {
         setRedirect(true)
     }
 
+    const emptyCheck = () => {
+        let array = []
+        if(props.location.state !== undefined && Array.isArray(props.location.state)){
+            array = [...props.location.state]
+        }
+        array.push(flightEntry)
+        return array
+    }
+
     return (
         <>
-        {redirect ? <Redirect to={{pathname:'/ReviewEntry', state:{flightEntry}}}/> :
+        {redirect ? <Redirect to={{pathname:'/ReviewEntry', state:emptyCheck()}}/> :
             <Container fluid>
                 <Tabs
                 activeKey={key}

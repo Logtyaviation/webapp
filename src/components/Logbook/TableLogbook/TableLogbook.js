@@ -9,9 +9,11 @@ class TableLogbook extends Component{
     
     render(){
         return(
-            <Table bordered>
+            <Table bordered striped variant='dark'>
                 <TableHeader/>
-                <NewLineTable p={10}/>
+                <tbody>
+                    <NewLineTable p={10}/>
+                </tbody>
                 <TotalsTable />           
             </Table>
         )

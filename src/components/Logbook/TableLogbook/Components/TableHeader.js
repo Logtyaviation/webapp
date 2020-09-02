@@ -22,12 +22,12 @@ class TableHeader extends Component {
                     <td className="nobreak">Off Block</td>
                     <td>Place</td>
                     <td>Date</td>
-                    <td>Off Block</td>
+                    <td className='nobreak'>On Block</td>
                     <td>Place</td>
                     <td>Type</td>
                     <td>Registration</td>
-                    <td>Single pilot</td>
-                    <td>Multi pilot</td>
+                    <td className='nobreak'>Single pilot</td>
+                    <td className='nobreak'>Multi pilot</td>
                     <td>Day</td>
                     <td>Night</td>
                     <td>Day</td>
@@ -35,7 +35,7 @@ class TableHeader extends Component {
                     <td>IFR</td>
                     <td>Night</td>
                     <td>PIC</td>
-                    <td>Co-pilot</td>
+                    <td className='nobreak'>Co-pilot</td>
                     <td>Dual</td>
                     <td>Instructor</td>                       
                 </tr>                
