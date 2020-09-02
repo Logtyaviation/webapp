@@ -15,9 +15,9 @@ const FormRank = (props) => {
                         placeholder='Ex: Captain'
                         name={`Crew.${index}.CustomRank`}
                         id={`Crew.${index}.CustomRank`}
-                        value={CrewMember.CustomRank}
-                        isValid={isValid({index, CrewMember, key: 'CustomRank', errors})}
-                        isInvalid={isInvalid({index, CrewMember, key: 'CustomRank', errors})}
+                        value={CrewMember.Rank === 'Custom' ? CrewMember.CustomRank:CrewMember.Rank}
+                        isValid={isValid({index, CrewMember, key:'CustomRank', errors})}
+                        isInvalid={isInvalid({index, CrewMember, key:'CustomRank', errors})}
                         onChange={handleChange}
                         disabled={CrewMember.Rank !== 'Custom'}
                     />
