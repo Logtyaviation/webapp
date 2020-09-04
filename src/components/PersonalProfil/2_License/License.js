@@ -1,10 +1,10 @@
 import React from 'react';
-import LicenseStateNumberDate from './SubComponents/LicenseStateNumberDate';
-import LicenseTypeValidityRemarks from './SubComponents/LicenseTypeValidityRemarks';
-import RatingsCertificatesAndPrivileges from './SubComponents/RatingsCertificatesAndPrivileges';
+import StateNumberDate from './Components/StateNumberDate';
+import TypeValidityRemarks from './Components/TypeValidityRemarks';
 import { Formik } from 'formik';
 import { Container, Form, Button } from 'react-bootstrap';
 import  * as yup from 'yup';
+import Ratings from './Components/Ratings';
 
 const schema = yup.object({
     LicenseStateOfIssue:yup.string(),
@@ -17,14 +17,14 @@ const schema = yup.object({
     LicenseELP:yup.number().min(1, 'Must be between 1 and 6').max(6, 'Must be between 1 and 6'),
     LicenseELPExpirationDate:yup.date(),
     LicenseRemarks:yup.string().max(500, 'Please write less than 500 caracters'),
-    RatingsCertificatesAndPrivilegesList:yup.array().of(yup.object({
+    RatingList:yup.array().of(yup.object({
         RatingStyle:yup.string(),
         RatingName:yup.string(),
-        RatingsRemarks:yup.string(),
+        RatingRemarks:yup.string(),
     }))
 })
 
-const LicenseInformations = () => {
+const License = () => {
     return(
         <Formik
             validationSchema={schema}
@@ -43,12 +43,7 @@ const LicenseInformations = () => {
                 LicenseELP:'',
                 LicenseELPExpirationDate:'',
                 LicenseRemarks:'',
-                RatingsCertificatesAndPrivilegesList:
-                    [{
-                        RatingStyle:'',
-                        RatingName:'',
-                        RatingsRemarks:'',    
-                    }],
+                RatingList:[]
             }}
         >
             {({
@@ -59,17 +54,17 @@ const LicenseInformations = () => {
             }) => (
                 <Container fluid>
                     <Form noValidate onSubmit={handleSubmit}>
-                        <LicenseStateNumberDate
+                        <StateNumberDate
                         handleChange={handleChange}
                         values={values}
                         errors={errors}
                         />
-                        <LicenseTypeValidityRemarks
+                        <TypeValidityRemarks
                         handleChange={handleChange}
                         values={values}
                         errors={errors}
                         />
-                        <RatingsCertificatesAndPrivileges
+                        <Ratings
                         handleChange={handleChange}
                         values={values}
                         errors={errors}
@@ -82,4 +77,4 @@ const LicenseInformations = () => {
     )
 }
 
-export default LicenseInformations;
+export default License;

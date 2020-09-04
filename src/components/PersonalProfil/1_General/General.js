@@ -1,7 +1,7 @@
 import React from 'react';
 import AccountDetails from '../../Register/SubComponent/AccountDetails';
-import DateOfBirth from './SubComponents/DateOfBirth';
-import FirstLastNames from './SubComponents/FirstLastNames';
+import DateOfBirth from './Components/DateOfBirth';
+import FirstLastNames from './Components/FirstLastNames';
 import { Container, Form, Button } from 'react-bootstrap';
 import { Formik } from 'formik'
 import  * as yup from 'yup'
@@ -21,7 +21,7 @@ const schema = yup.object({
         .required('Password confirmation is required')
 })
 
-const GeneralInformation = () => {
+const General = () => {
     return(
         <Formik
             validationSchema={schema}
@@ -71,4 +71,4 @@ const GeneralInformation = () => {
         )
     }
 
-export default GeneralInformation;
+export default General;
