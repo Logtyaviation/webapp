@@ -14,15 +14,15 @@ const DateOfBirth = (props) => {
                         <InputGroup.Text>Day</InputGroup.Text>
                     </InputGroup.Prepend>
                     <Form.Control 
-                    name='LogbookHolderDayDOB'
-                    id='LogbookHolderDayDOB'
+                    name='HolderDayDOB'
+                    id='HolderDayDOB'
                     placeholder='Ex: 20'
-                    value={values.LogbookHolderDayDOB}
+                    value={values.HolderDayDOB}
                     onChange={handleChange}
-                    isValid={values.LogbookHolderDayDOB && !errors.LogbookHolderDayDOB}
-                    isInvalid={errors.LogbookHolderDayDOB}
+                    isValid={values.HolderDayDOB && !errors.HolderDayDOB}
+                    isInvalid={errors.HolderDayDOB}
                     />
-                    <Form.Control.Feedback type='invalid'>{errors.LogbookHolderDayDOB}</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid'>{errors.HolderDayDOB}</Form.Control.Feedback>
                 </InputGroup>
             </Col>
             <Col>    
@@ -31,15 +31,15 @@ const DateOfBirth = (props) => {
                         <InputGroup.Text>Month</InputGroup.Text>
                     </InputGroup.Prepend>
                     <Form.Control 
-                    name='LogbookHolderMonthDOB'
-                    id='LogbookHolderMonthDOB'
+                    name='HolderMonthDOB'
+                    id='HolderMonthDOB'
                     placeholder='Ex: 08'
-                    value={values.LogbookHolderMonthDOB}
+                    value={values.HolderMonthDOB}
                     onChange={handleChange}
-                    isValid={values.LogbookHolderMonthDOB && !errors.LogbookHolderMonthDOB}
-                    isInvalid={errors.LogbookHolderMonthDOB}
+                    isValid={values.HolderMonthDOB && !errors.HolderMonthDOB}
+                    isInvalid={errors.HolderMonthDOB}
                     />
-                    <Form.Control.Feedback type='invalid'>{errors.LogbookHolderMonthDOB}</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid'>{errors.HolderMonthDOB}</Form.Control.Feedback>
                 </InputGroup>
             </Col>
             <Col>    
@@ -48,15 +48,15 @@ const DateOfBirth = (props) => {
                         <InputGroup.Text>Year</InputGroup.Text>
                     </InputGroup.Prepend>
                     <Form.Control 
-                    name='LogbookHolderYearDOB'
-                    id='LogbookHolderYearDOB'
+                    name='HolderYearDOB'
+                    id='HolderYearDOB'
                     placeholder='Ex: 1991'
-                    value={values.LogbookHolderYearDOB}
+                    value={values.HolderYearDOB}
                     onChange={handleChange}
-                    isValid={values.LogbookHolderYearDOB && !errors.LogbookHolderYearDOB}
-                    isInvalid={errors.LogbookHolderYearDOB}
+                    isValid={values.HolderYearDOB && !errors.HolderYearDOB}
+                    isInvalid={errors.HolderYearDOB}
                     />
-                    <Form.Control.Feedback type='invalid'>{errors.LogbookHolderYearDOB}</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid'>{errors.HolderYearDOB}</Form.Control.Feedback>
                 </InputGroup>
             </Col>
         </Row>

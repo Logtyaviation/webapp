@@ -12,26 +12,26 @@ const FirstLastNames = (props) => {
                 <InputGroup.Text>Last name(s)</InputGroup.Text>
             </InputGroup.Prepend>
             <Form.Control
-            id='LogbookHolderLastName'
-            name='LogbookHolderLastName'
+            id='HolderLastName'
+            name='HolderLastName'
             placeholder='Ex: Travolta'
-            value={values.LogbookHolderLastName}
+            value={values.HolderLastName}
             onChange={handleChange}
-            isValid={values.LogbookHolderLastName && !errors.LogbookHolderLastName}
-            isInvalid={!!errors.LogbookHolderLastName}
+            isValid={values.HolderLastName && !errors.HolderLastName}
+            isInvalid={!!errors.HolderLastName}
             />
             <Form.Control
-            name='CTDLogbookHolderLastName'
-            id='CTDLogbookHolderLastName'
+            name='HolderLastName2'
+            id='HolderLastName2'
             placeholder='Other last name(s) (Optional)'
             onChange={handleChange}
-            value={values.CTDLogbookHolderLastName}
-            isValid={values.CTDLogbookHolderLastName && !errors.CTDLogbookHolderLastName}
-            isInvalid={!!errors.CTDLogbookHolderLastName}
+            value={values.HolderLastName2}
+            isValid={values.HolderLastName2 && !errors.HolderLastName2}
+            isInvalid={!!errors.HolderLastName2}
             />
             <Form.Control.Feedback type='invalid'>
-                {errors.LogbookHolderLastName}
-                {errors.CTDLogbookHolderLastName === '' ? null:errors.CTDLogbookHolderLastName}
+                {errors.HolderLastName}
+                {errors.HolderLastName2 === '' ? null:errors.HolderLastName2}
             </Form.Control.Feedback>
         </InputGroup>
         <InputGroup>
@@ -39,26 +39,26 @@ const FirstLastNames = (props) => {
                 <InputGroup.Text>First name(s)</InputGroup.Text>
             </InputGroup.Prepend>
             <Form.Control
-            name='LogbookHolderFirstName'
+            name='HolderFirstName'
             placeholder='Ex: John'
-            id='LogbookHolderFirstName'
-            value={values.LogbookHolderFirstName}
+            id='HolderFirstName'
+            value={values.HolderFirstName}
             onChange={handleChange}
-            isValid={values.LogbookHolderFirstName && !errors.LogbookHolderFirstName}
-            isInvalid={!!errors.LogbookHolderFirstName}
+            isValid={values.HolderFirstName && !errors.HolderFirstName}
+            isInvalid={!!errors.HolderFirstName}
             />
             <Form.Control
-            name='CTDLogbookHolderFirstName'
-            id='CTDLogbookHolderFirstName'
+            name='HolderFirstName2'
+            id='HolderFirstName2'
             placeholder='Other first name(s) (Optional)'
             onChange={handleChange}
-            value={values.CTDLogbookHolderFirstName}
-            isValid={values.CTDLogbookHolderFirstName && !errors.CTDLogbookHolderFirstName}
-            isInvalid={!!errors.CTDLogbookHolderFirstName}
+            value={values.HolderFirstName2}
+            isValid={values.HolderFirstName2 && !errors.HolderFirstName2}
+            isInvalid={!!errors.HolderFirstName2}
             />
             <Form.Control.Feedback type='invalid'>
-                {errors.LogbookHolderFirstName}
-                {errors.CTDLogbookHolderFirstName === '' ? null:errors.CTDLogbookHolderFirstName}
+                {errors.HolderFirstName}
+                {errors.HolderFirstName2 === '' ? null:errors.HolderFirstName2}
             </Form.Control.Feedback>            
         </InputGroup>
 
