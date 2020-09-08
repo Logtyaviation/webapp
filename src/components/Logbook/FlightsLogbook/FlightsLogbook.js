@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Table} from 'react-bootstrap'
-import './TableLogbook.css'
+import './FlightsLogbook.css'
 import NewLineTable from './Components/NewLineTable'
 import TotalsTable from './Components/TotalsTable'
 import TableHeader from './Components/TableHeader'

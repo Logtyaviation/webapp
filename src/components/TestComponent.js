@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import GeneralLoggedInNavBar from './NavBars/GeneralLoggedInNavBar';
+import GeneralNavBar from './NavBars/GeneralNavBar';
 
 class TestComponent extends Component {
     
     render(){
         return(
             <>
-                <GeneralLoggedInNavBar/>
+                <GeneralNavBar
+                HolderFirstName='Xavier'
+                HolderLastName='Solse'/>
             </>
         )
     }

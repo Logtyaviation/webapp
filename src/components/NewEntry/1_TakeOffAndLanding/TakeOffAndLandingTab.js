@@ -36,7 +36,7 @@ const TakeOffAndLandingTab = (props) => {
                             errors={errors}/>
                         </Col>
                     </Row>
-                    <Button type='submit'>Next: Time allocation</Button>
+                    <Button type='submit' style={{float : 'right'}}>Next: Time allocation</Button>
                 </Form>
             )}
         </Formik>

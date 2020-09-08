@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Table, Row, Button, Container } from 'react-bootstrap'
-import TableHeader from '../Logbook/TableLogbook/Components/TableHeader'
-import NewLineTable from '../Logbook/TableLogbook/Components/NewLineTable'
+import TableHeader from '../Logbook/FlightsLogbook/Components/TableHeader'
+import NewLineTable from '../Logbook/FlightsLogbook/Components/NewLineTable'
 import { Redirect } from 'react-router-dom'
 
 const ReviewEntry = (props) => {
@@ -27,7 +27,7 @@ const ReviewEntry = (props) => {
             </Table>
             <Container fluid>
                 <Row>
-                    <Button onClick={() => setRedirect(true)}>Add</Button>
+                    <Button onClick={() => setRedirect(true)}>Add new entry</Button>
                 </Row>
                 <Row>
                     <Button>Submit to logbook</Button>

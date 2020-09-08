@@ -30,7 +30,7 @@ const CrewInformationsTab = (props) => {
                             errors={errors}/>
                         </Col>
                     </Row>
-                    <Button type='submit'>Next: Remarks</Button>
+                    <Button type='submit' style={{float : 'right'}}>Next: Remarks</Button>
                 </Form>
             )}
         </Formik>

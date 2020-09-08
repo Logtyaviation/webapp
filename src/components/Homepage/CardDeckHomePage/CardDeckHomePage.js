@@ -9,8 +9,11 @@ const CardDeckHomePage = () => {
                 <GenericHomePageCard
                 CardTitle='Logbook'
                 CardText='Access logbook'
-                CardButton="Let's see!"
-                CardButtonLink='/Table'
+                ButtonsAmount='2'
+                CardButton='Flights'
+                CardButtonLink='/FlightsTable'
+                CardButton2='Simulators'
+                CardButtonLink2=''
                 /> 
                 <GenericHomePageCard
                 CardTitle='New flight entry'
@@ -18,6 +21,12 @@ const CardDeckHomePage = () => {
                 CardButton="Let's log!"
                 CardButtonLink='/NewFlightEntry'
                 /> 
+                <GenericHomePageCard
+                CardTitle='My profil'
+                CardText='Modify the informations about your profil'
+                CardButton='Modify'
+                CardButtonLink='/PersonalProfil'
+                />
            </CardDeck>
         </>
     )

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import '../TableLogbook.css'
+import '../FlightsLogbook.css'
 import { Button, Row } from 'react-bootstrap'
 import ModalRemarks from './ModalRemarks'
 

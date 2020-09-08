@@ -30,7 +30,7 @@ const TimeAllocationTab = (props) => {
                             errors={errors}/>
                         </Col>
                     </Row>
-                    <Button type='submit'>Next: Aircraft informations</Button>
+                    <Button type='submit' style={{float : 'right'}}>Next: Aircraft informations</Button>
                 </Form>
             )}
         </Formik>
