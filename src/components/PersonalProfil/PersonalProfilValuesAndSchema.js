@@ -43,6 +43,7 @@ export const LicenseSchema = yup.object({
         RatingStyle:yup.string(),
         RatingName:yup.string(),
         RatingRemarks:yup.string(),
+        RatingExpiration:yup.date()
     }))
 })
 
@@ -58,4 +59,20 @@ export const LicenseInitialValues = {
     LicenseELPExpirationDate:'',
     LicenseRemarks:'',
     RatingList:[]
+}
+
+export const MedicalSchema = yup.object({
+    Class1Expiration:yup.date(),
+    Class2Expiration:yup.date(),
+    LAPLExpiration:yup.date(),
+    MedicalIssueDate:yup.date(),
+    MedicalRestrictions:yup.string().max(500, 'You can not have so many restrictions!')
+})
+
+export const MedicalInitialValues = {
+    Class1Expiration:'',
+    Class2Expiration:'',
+    LAPLExpiration:'',
+    MedicalIssueDate:'',
+    MedicalRestrictions:''
 }

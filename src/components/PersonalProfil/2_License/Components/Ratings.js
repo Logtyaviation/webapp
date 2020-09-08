@@ -3,6 +3,7 @@ import { DropdownButton, Dropdown, Row, Col, Button } from 'react-bootstrap';
 import { FieldArray } from 'formik'
 import FormRatingRemarks from './Ratings/FormRatingRemarks';
 import FormRatingName from './Ratings/FormRatingName';
+import FormRatingExpiration from './Ratings/FormRatingExpiration';
 
 const Ratings = (props) => {
     const {errors, values, handleChange} = props
@@ -16,7 +17,7 @@ const Ratings = (props) => {
                 <DropdownButton
                     drop='right'
                     title='Add'
-                    onSelect={(eventKey) => push({RatingType:eventKey, RatingName:'', RatingRemarks:''})}
+                    onSelect={(eventKey) => push({RatingType:eventKey, RatingName:'', RatingExpiration:'', RatingRemarks:''})}
                     >
                     <Dropdown.Item eventKey = 'Class/Type rating'>Class/Type rating</Dropdown.Item>
                     <Dropdown.Item eventKey = 'Certificate'>Certificate</Dropdown.Item>
@@ -33,7 +34,15 @@ const Ratings = (props) => {
                             index={index}
                             />
                         </Col>
-                        <Col md='7'>
+                        <Col md='3'>
+                            <FormRatingExpiration
+                            Rating = {Rating}
+                            handleChange = {handleChange}
+                            errors = {errors}
+                            index = {index}
+                            />
+                        </Col>
+                        <Col md='4'>
                             <FormRatingRemarks
                             Rating = {Rating}
                             handleChange = {handleChange}
