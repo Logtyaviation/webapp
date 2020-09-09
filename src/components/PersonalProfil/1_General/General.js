@@ -5,6 +5,7 @@ import FirstLastNames from './Components/FirstLastNames';
 import { Container, Form, Button } from 'react-bootstrap';
 import { Formik } from 'formik'
 import { GeneralSchema, GeneralInitialValues } from '../PersonalProfilValuesAndSchema';
+import CompanyAndRank from './Components/CompanyAndRank';
 
 
 const General = () => {
@@ -30,6 +31,10 @@ const General = () => {
                         values={values}
                         errors={errors}/>
                         <DateOfBirth
+                        handleChange={handleChange}
+                        values={values}
+                        errors={errors}/>
+                        <CompanyAndRank
                         handleChange={handleChange}
                         values={values}
                         errors={errors}/>
