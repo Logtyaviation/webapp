@@ -4,7 +4,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import './Sidebar.css'
-import { Divider, Collapse, Avatar, makeStyles } from '@material-ui/core'
+import { Divider, Collapse, Avatar, makeStyles, Drawer, IconButton } from '@material-ui/core'
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import { Link } from 'react-router-dom';
@@ -13,6 +13,7 @@ import MenuBookTwoToneIcon from '@material-ui/icons/MenuBookTwoTone';
 import LibraryAddTwoToneIcon from '@material-ui/icons/LibraryAddTwoTone';
 import FlightTakeoffTwoToneIcon from '@material-ui/icons/FlightTakeoffTwoTone';
 import SportsEsportsTwoToneIcon from '@material-ui/icons/SportsEsportsTwoTone';
+import { ChevronLeft, ChevronRight } from '@material-ui/icons'
 
 const useStyles = makeStyles((theme) => ({
     large: {
@@ -28,10 +29,23 @@ function Sidebar(props){
     const classes = useStyles();
 
     const [openLogbook, setOpenLogbook] = React.useState(false);
-    const [openNewEntry, setOpenNewEntry] = React.useState(false)
+    const [openNewEntry, setOpenNewEntry] = React.useState(false);
+    const [state, setState] = React.useState({openleft:false})
 
     const handleClick = (setOpenFunction, open) => {
         setOpenFunction(!open);
+    }
+
+    const toggleDrawer = (action) => (event) => {
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+        return;
+        }
+        if (action === 'opening') {
+            setState({...state, openleft:true})
+        }
+        else if(action === 'closing') {
+            setState({...state, openleft:false})
+        }
     }
 
     const getIcon = (label) => {
@@ -66,36 +80,46 @@ function Sidebar(props){
     }
 
     return (
-        <div className="sidebar">
-                <List disablePadding dense>
-                    <ListItem>
-                        <Avatar className={classes.large}></Avatar>
-                    </ListItem>
-                    <ListItem>
-                        {holderFirstName} {holderLastName}
-                    </ListItem>
-                    <Divider variant='middle'/>
-                    <ListItem style={{ paddingLeft: 18 }} button component={Link} to='/'>
-                        <ListItemIcon>
-                            <HomeRoundedIcon/>
-                        </ListItemIcon>
-                        <ListItemText>Home</ListItemText>
-                    </ListItem>
-                    {genericExpandableListItem(18, 'Logbook', setOpenLogbook, openLogbook)}
-                    <Collapse in={openLogbook}>
-                        <List disablePadding>
-                            {genericListItem(36, '/FlightsTable', 'Flights')}
-                            {genericListItem(36, '/SimulatorTable', 'Simulators')}
-                        </List>
-                    </Collapse>
-                    {genericExpandableListItem(18, 'New entry', setOpenNewEntry, openNewEntry)}
-                    <Collapse in={openNewEntry}>
-                        <List disablePadding>
-                            {genericListItem(36, '/NewFlightEntry', 'Flight entry')}
-                            {genericListItem(36, '/NewSimulatorEntry', 'Simulator entry')}
-                        </List>
-                    </Collapse>
-                </List>
+        <div>
+            <React.Fragment key='left'>
+                <IconButton onClick={toggleDrawer('opening')}>
+                    <ChevronRight/>
+                </IconButton>
+                <Drawer anchor='left' open={state.openleft} onClose={toggleDrawer('closing')}>
+                    <List disablePadding dense>
+                        <ListItem>
+                            <Avatar className={classes.large}></Avatar>
+                            <IconButton onClick={toggleDrawer('closing')}>
+                                <ChevronLeft/>
+                            </IconButton>
+                        </ListItem>
+                        <ListItem>
+                            {holderFirstName} {holderLastName}
+                        </ListItem>
+                        <Divider variant='middle'/>
+                        <ListItem style={{ paddingLeft: 18 }} button component={Link} to='/'>
+                            <ListItemIcon>
+                                <HomeRoundedIcon/>
+                            </ListItemIcon>
+                            <ListItemText>Home</ListItemText>
+                        </ListItem>
+                        {genericExpandableListItem(18, 'Logbook', setOpenLogbook, openLogbook)}
+                        <Collapse in={openLogbook}>
+                            <List disablePadding>
+                                {genericListItem(36, '/FlightsTable', 'Flights')}
+                                {genericListItem(36, '/SimulatorTable', 'Simulators')}
+                            </List>
+                        </Collapse>
+                        {genericExpandableListItem(18, 'New entry', setOpenNewEntry, openNewEntry)}
+                        <Collapse in={openNewEntry}>
+                            <List disablePadding>
+                                {genericListItem(36, '/NewFlightEntry', 'Flight entry')}
+                                {genericListItem(36, '/NewSimulatorEntry', 'Simulator entry')}
+                            </List>
+                        </Collapse>
+                    </List>
+                </Drawer> 
+            </React.Fragment>   
         </div>
     )
 }
