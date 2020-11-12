@@ -4,6 +4,7 @@ import { Container, Button, Form } from 'react-bootstrap'
 import ExpirationDates from './Components/ExpirationDates'
 import { MedicalInitialValues, MedicalSchema } from '../PersonalProfilValuesAndSchema'
 import IssueDateRestrictions from './Components/IssueDateRestrictions'
+import {postInDB} from '../../Functions';
 
 const Medical = () => {
     return(
@@ -12,7 +13,13 @@ const Medical = () => {
             initialValues = {MedicalInitialValues}
             onSubmit = {values => {
                 console.log('data', values)
-                console.log('Simulating sending data to server')
+                postInDB({
+                    issue_date: values.MedicalIssueDate,
+                    medical_remark: values.MedicalRestrictions,
+                    class1_exp: values.Class1Expiration,
+                    class2_exp: values.Class2Expiration,
+                    lapl_exp: values.LAPLExpiration
+                }, 'http://localhost:3000/medical/save')
             }}
         >
             {({

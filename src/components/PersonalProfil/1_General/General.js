@@ -1,12 +1,12 @@
 import React from 'react';
-import AccountDetails from '../../Register/SubComponent/AccountDetails';
+import AccountDetails from '../../Homepage/3_Register/SubComponent/AccountDetails';
 import DateOfBirth from './Components/DateOfBirth';
 import FirstLastNames from './Components/FirstLastNames';
 import { Container, Form, Button } from 'react-bootstrap';
 import { Formik } from 'formik'
 import { GeneralSchema, GeneralInitialValues } from '../PersonalProfilValuesAndSchema';
 import CompanyAndRank from './Components/CompanyAndRank';
-
+import {postInDB} from '../../Functions'
 
 const General = () => {
     return(
@@ -14,7 +14,16 @@ const General = () => {
             validationSchema={GeneralSchema}
             onSubmit={values => {
                 console.log('General informations:', values)
-                console.log('Simulating sending data to server')
+                postInDB({
+                    first_name: values.HolderFirstName+' '+values.HolderFirstName2, 
+                    last_name: values.HolderLastName+' '+values.HolderLastName2,
+                    date_of_birth: values.HolderDayDOB+'/'+values.HolderMonthDOB+'/'+values.HolderYearDOB 
+                }, 'http://localhost:3000/profil/save')
+                postInDB({
+                    airline: values.HolderCompany, 
+                    rank: values.HolderRank,
+                    date_of_entry: values.DateOfEntry
+                }, 'http://localhost:3000/company/save')
             }}
             initialValues={GeneralInitialValues}
         >
