@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import {Form, Row, Col, InputGroup } from 'react-bootstrap';
 
+
 class AccountDetails extends Component {
+
     render() {
         return (
             <Form.Group>

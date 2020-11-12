@@ -18,7 +18,7 @@ const GenericHomePageCard = (props) => {
                 <Button href={CardButtonLink}>{CardButton}</Button>
                 {ButtonsAmount === '2' ? <Button href={CardButtonLink2}>{CardButton2}</Button>:null}
             </Card.Body>
-            <Card.Footer classname='text-muted'>
+            <Card.Footer className='text-muted'>
                 {CardFooter}
             </Card.Footer>
         </Card>
