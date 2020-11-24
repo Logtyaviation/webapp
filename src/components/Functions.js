@@ -9,5 +9,25 @@ export function postInDB(body, route) {
     .catch((response) => console.log(response))
 }
 
+// export function fetchFromDB(route, setAuthenticated, newState) {
+//     fetch(route, {
+//         headers:{
+//             'Accept':'application/json',
+//             'Content-Type':'application/json'
+//         },
+//         credentials:'include'
+//     })
+//     .then(async (response) => {
+//         const text = await response.text();
+//         const body = JSON.parse(text);
+//         const isAuthenticated = response.status === 200;
+//         setAuthenticated(isAuthenticated)
+//         if(isAuthenticated) {
+//             this.setState(newState)
+//         }
+//     })
+//     .catch(error => console.log(error))
+// }
+
 
 

@@ -17,7 +17,7 @@ class Logty extends Component {
     super(props)
     console.log('logty constructor (app.js)')
     this.state = {
-      isAuthenticated:false
+      isAuthenticated:true
     }
     this.setAuthenticated = this.setAuthenticated.bind(this)
   }
@@ -80,7 +80,7 @@ class Logty extends Component {
           <Route path='/home' render={() => {
             if(this.state.isAuthenticated) {
               console.log('should be HERE')
-              return <Homepage setAuthenticated={this.setAuthenticated}/>
+              return <Homepage setAuthenticated={this.setAuthenticated} isAuthenticated={this.state.isAuthenticated}/>
             } else {
               console.log('should not be here')
               return <Redirect to='/'/>
@@ -90,7 +90,13 @@ class Logty extends Component {
           <Route path='/NewFlightEntry' component={FlightEntry}/>
           <Route path='/ReviewEntry' component={ReviewEntry}/>
           <Route path='/TestPage' component={TestComponent}/>
-          <Route path='/PersonalProfil' component={PersonalProfil}/>
+          <Route path='/PersonalProfil' render={() => {
+            if(this.state.isAuthenticated) {
+              return <PersonalProfil setAuthenticated={this.setAuthenticated} isAuthenticated={this.state.isAuthenticated} />
+            } else {
+              return <Redirect to='/' />
+            }
+          }}/>
           <Route path='/Register' component={RegisterPage}/>
         </>
       </Router>
