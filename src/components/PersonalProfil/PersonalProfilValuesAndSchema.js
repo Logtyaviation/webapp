@@ -8,9 +8,7 @@ export const GeneralSchema = yup.object({
     HolderCompany:yup.string(),
     DateOfEntry:yup.date(),
     HolderRank:yup.string().required('Your rank is required'),
-    HolderDayDOB:yup.number().min(1, 'Please enter a valid day number').max(31, 'Please enter a valid day number'),
-    HolderMonthDOB:yup.number().min(1, 'Please enter a valid month number').max(12, 'Please enter a valid month number'),
-    HolderYearDOB:yup.number().min(1920, 'You can not be that old and flying!').max(2020, 'Are you comming from the future ??'),
+    HolderDOB:yup.string().required('Your date of birth is required'),
     email: yup.string().email('Please use a valid Email').required('Email is required'),
     password: yup.string().min(8).required('Password is required'),
     confirmPassword: yup.string()
@@ -26,9 +24,7 @@ export const GeneralInitialValues = {
     HolderCompany:'',
     DateOfEntry:'',
     HolderRank:'',
-    HolderDayDOB:'',
-    HolderMonthDOB:'',
-    HolderYearDOB:'',
+    HolderDOB:'',
     email:'',
     password:'',
     confirmPassword:''
