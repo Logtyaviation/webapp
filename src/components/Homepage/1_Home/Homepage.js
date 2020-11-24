@@ -7,9 +7,9 @@ class Homepage extends Component {
     render(){
         return(
             <>
+                <TopNavBar {...this.props}/>
                 <Container fluid>
-                    <TopNavBar/>
-                    <CardDeckHomePage setAuthenticated={this.props.setAuthenticated}/>
+                    <CardDeckHomePage {...this.props}/>
                 </Container>
             </>
         )

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, Nav, Navbar, Button } from 'react-bootstrap'
 
-const TopNavBar = () => {
+const TopNavBar = (props) => {
 
     const options = {
         method: 'GET',
@@ -15,7 +15,7 @@ const TopNavBar = () => {
             return response.text().then(function(text){
                 responseText = text
                 if(responseText === 'disconnect user') {
-                    window.location.href = '/'
+                    props.setAuthenticated(false)
                 }
             })
         })
@@ -23,6 +23,7 @@ const TopNavBar = () => {
     }
 
     return(
+        <>
         <Navbar bg='dark' variant='dark'>
             <Navbar.Brand href='/home'>Logty</Navbar.Brand>
             <Nav className='mr-auto'>
@@ -33,6 +34,7 @@ const TopNavBar = () => {
                 <Button variant="outline-info" className="mr-sm-2" onClick={logout}>Log out</Button>
             </Form>
         </Navbar>
+        </>
     )
 }
 

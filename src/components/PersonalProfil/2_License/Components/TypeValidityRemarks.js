@@ -100,10 +100,10 @@ const TypeValidityRemarks = (props) => {
                         name='LicenseRemarks'
                         id='LicenseRemarks'
                         as='textarea'
-                        placeholder='Ex: - ATPL(A) theoritical knowledge credit
+                        placeholder='Ex: - ATPL(A) theoretical knowledge credit
                         - Endorsement for Instrument Rating'
                         rows='1'
-                        values={values.LicenseRemarks}
+                        value={values.LicenseRemarks}
                         onChange={handleChange}
                         isValid={values.LicenseRemarks && !errors.LicenseRemarks}
                         isInvalid={!!errors.LicenseRemarks}

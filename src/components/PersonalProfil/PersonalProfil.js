@@ -3,10 +3,13 @@ import { Tab, Row, Col, Nav } from 'react-bootstrap';
 import License from './2_License/License';
 import General from './1_General/General';
 import Medical from './3_Medical/Medical';
+import TopNavBar from '../NavBars/TopNavBar';
 
-const PersonalProfil = () => {
+const PersonalProfil = (props) => {
 
     return (
+        <>
+        <TopNavBar/>
         <Tab.Container defaultActiveKey='GeneralInformations'>
             <Row>
                 <Col sm='2'>
@@ -25,18 +28,19 @@ const PersonalProfil = () => {
                 <Col>
                     <Tab.Content>
                         <Tab.Pane eventKey='GeneralInformations'>
-                            <General/>
+                            <General setAuthenticated={props.setAuthenticated} isAuthenticated={props.isAuthenticated}/>
                         </Tab.Pane>
                         <Tab.Pane eventKey='LicenseInformations'>
-                            <License/>
+                            <License setAuthenticated={props.setAuthenticated} isAuthenticated={props.isAuthenticated}/>
                         </Tab.Pane>
                         <Tab.Pane eventKey='MedicalInformations'>
-                            <Medical/>
+                            <Medical setAuthenticated={props.setAuthenticated} isAuthenticated={props.isAuthenticated}/>
                         </Tab.Pane>
                     </Tab.Content>
                 </Col>
             </Row>
         </Tab.Container>
+        </>
     );
 }
 
